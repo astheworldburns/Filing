@@ -10,7 +10,54 @@
 \usepackage{fancyhdr}
 \usepackage{tabularx}
 \usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{csquotes}
 \usepackage[hidelinks]{hyperref}
+
+% ------------------------------------------------------------------------------
+% Metadata and styling helpers
+% ------------------------------------------------------------------------------
+\hypersetup{
+    pdftitle={Verified Formal Challenge -- Sturm \& Claytor},
+    pdfauthor={Seth Sturm; Mary Ann Claytor},
+    pdfsubject={Verified Formal Challenge to the WVDP and RBC},
+    pdfkeywords={FRCP, Verified Challenge, Rules and Bylaws Committee, WVDP}
+}
+
+\setlength{\parskip}{0.45em}
+\setlist[enumerate]{itemsep=0.35em}
+\setlist[description]{style=nextline}
+
+\pagestyle{fancy}
+\fancyhf{}
+\chead{\textsc{Verified Formal Challenge}}
+\cfoot{\thepage}
+
+% Party and formatting shortcuts
+\newcommand{\filingdate}{December 12, 2025}
+\newcommand{\GrievantA}{Seth Sturm}
+\newcommand{\GrievantB}{Mary Ann Claytor}
+\newcommand{\Respondents}{West Virginia Democratic Party et al.}
+\newcommand{\RBC}{Rules and Bylaws Committee}
+
+\newcommand{\Exhibit}[1]{[Exhibit~#1]}
+
+\newcommand{\ContactInfo}[5]{%
+    \textbf{#1}\\#2\\#3\\#4\\#5
+}
+
+\newcommand{\VerificationBlock}[2]{%
+    \textbf{Declaration of #1}
+
+    I, #1, declare under penalty of perjury that I have read the foregoing Verified Formal Challenge and the facts stated herein are true and correct to the best of my knowledge.
+
+    \vspace{1cm}
+    \noindent Executed on: \filingdate
+
+    \vspace{1cm}
+    \noindent \makebox[3in]{\hrulefill}\\
+    #1, #2
+}
 
 % No page number on the cover
 \pagenumbering{gobble}
@@ -20,55 +67,48 @@
 % ============================================================================
 \begin{document}
 
-% --- CONTACT INFO BLOCK (Top Left) ---
-\begin{singlespace}
-\textbf{Seth Sturm}\\
-377 Messer Run Rd\\
-Metz, WV 26585\\
-+1 (681) 526-7605\\
-sethsturm@gmail.com
+\begin{titlepage}\thispagestyle{empty}
+    \begin{singlespace}
+        \ContactInfo{\GrievantA}{377 Messer Run Rd}{Metz, WV 26585}{+1 (681) 526-7605}{sethsturm@gmail.com}
 
-\vspace{0.5em}
+        \vspace{0.5em}
 
-\textbf{Mary Ann Claytor}\\
-221 Oliver St\\
-St. Albans, WV 25177\\
-+1 (304) 993-1939\\
-maryannclaytor@gmail.com
+        \ContactInfo{\GrievantB}{221 Oliver St}{St. Albans, WV 25177}{+1 (304) 993-1939}{maryannclaytor@gmail.com}
 
-\vspace{0.5em}
+        \vspace{0.5em}
 
-Grievants, \textit{pro se}
-\end{singlespace}
+        Grievants, \textit{pro se}
+    \end{singlespace}
 
-\vspace{1.5cm}
+    \vspace{1.25cm}
 
-% --- COURT HEADER ---
-\begin{center}
-    \textbf{\large BEFORE THE RULES AND BYLAWS COMMITTEE}\\
-    \textbf{\large OF THE DEMOCRATIC NATIONAL COMMITTEE}
-\end{center}
+    % --- COURT HEADER ---
+    \begin{center}
+        \textbf{\large BEFORE THE RULES AND BYLAWS COMMITTEE}\\
+        \textbf{\large OF THE DEMOCRATIC NATIONAL COMMITTEE}
+    \end{center}
 
-\vspace{1cm}
+    \vspace{1cm}
 
-% --- CAPTION BLOCK ---
-\noindent
-\begin{tabularx}{\textwidth}{@{} p{0.45\textwidth} c p{0.5\textwidth} @{}}
-    & : & \\
-    \textbf{SETH STURM} and \textbf{MARY ANN CLAYTOR}, & : & Filing Date: December 12, 2025 \\
-    & : & \\
-    \hspace{1cm} Grievants, & : & \textbf{VERIFIED FORMAL CHALLENGE} \\
-    & : & \\
-    \hspace{0.5cm} v. & : & Relief Requested: \\
-    & : & (a) Appointment of Independent Hearing Officer \\
-    \textbf{WEST VIRGINIA DEMOCRATIC PARTY}; & : & (b) Interim reinstatement pending IHO determination \\
-    \textbf{WEST VIRGINIA STATE DEMOCRATIC} & : & (c) Mandatory Recusal of conflicted members \\
-    \textbf{EXECUTIVE COMMITTEE}; & : & (d) Written findings and recommendations for discipline \\
-    \textbf{RULES AND BYLAWS COMMITTEE}, & : & \\
-    & : & Recusal Requested For: \\
-    \hspace{1cm} Respondents. & : & Harold Ickes (RBC Member) \\
-    & : & James Roosevelt Jr. (RBC Co-Chair) \\
-\end{tabularx}
+    % --- CAPTION BLOCK ---
+    \noindent
+    \begin{tabularx}{\textwidth}{@{} p{0.45\textwidth} c p{0.5\textwidth} @{}}
+        & : & \\
+        \textbf{\GrievantA} and \textbf{\GrievantB}, & : & Filing Date: \filingdate \\
+        & : & \\
+        \hspace{1cm} Grievants, & : & \textbf{VERIFIED FORMAL CHALLENGE} \\
+        & : & \\
+        \hspace{0.5cm} v. & : & Relief Requested: \\
+        & : & (a) Appointment of Independent Hearing Officer \\
+        \textbf{WEST VIRGINIA DEMOCRATIC PARTY}; & : & (b) Interim reinstatement pending IHO determination \\
+        \textbf{WEST VIRGINIA STATE DEMOCRATIC} & : & (c) Mandatory Recusal of conflicted members \\
+        \textbf{EXECUTIVE COMMITTEE}; & : & (d) Written findings and recommendations for discipline \\
+        \textbf{RULES AND BYLAWS COMMITTEE}, & : & \\
+        & : & Recusal Requested For: \\
+        \hspace{1cm} Respondents. & : & Harold Ickes (RBC Member) \\
+        & : & James Roosevelt Jr. (RBC Co-Chair) \\
+    \end{tabularx}
+\end{titlepage}
 
 \newpage
 % Turn page numbering back on for the rest of the doc
@@ -109,21 +149,21 @@ Grievants, \textit{pro se}
 \textbf{Basis for Jurisdiction}
 
 \begin{enumerate}[resume=mainlist]
-\item The 2020 Memorandum of Understanding bears the signatures of RBC Co-Chairs James Roosevelt Jr. and Lorraine Miller [Exhibit T].
+\item The 2020 Memorandum of Understanding bears the signatures of RBC Co-Chairs James Roosevelt Jr. and Lorraine Miller \Exhibit{T}.
 
-\item The MOU constitutes a written agreement supported by consideration [Exhibit T].
+\item The MOU constitutes a written agreement supported by consideration \Exhibit{T}.
 
-\item The MOU preamble establishes RBC jurisdiction over "party officers and positions" and "general compliance" [Exhibit T].
+\item The MOU preamble establishes RBC jurisdiction over "party officers and positions" and "general compliance" \Exhibit{T}.
 \end{enumerate}
 
 \textbf{Timeliness}
 
 \begin{enumerate}[resume=mainlist]
-\item The WVSDEC removed members in May 2025 [Exhibit L]. The Board of Appeals issued rulings on September 25, 2025 [Exhibit E]. This filing occurs within twelve months of these events.
+\item The WVSDEC removed members in May 2025 \Exhibit{L}. The Board of Appeals issued rulings on September 25, 2025 \Exhibit{E}. This filing occurs within twelve months of these events.
 
-\item The June 28, 2024 RBC dismissal [Exhibit Z] documents the exhaustion of remedies.
+\item The June 28, 2024 RBC dismissal \Exhibit{Z} documents the exhaustion of remedies.
 
-\item The AAC has failed to meet since May 2023 [Exhibit AA]. This constitutes an ongoing violation.
+\item The AAC has failed to meet since May 2023 \Exhibit{AA}. This constitutes an ongoing violation.
 \end{enumerate}
 
 \section{II. PARTIES}
@@ -157,11 +197,11 @@ Grievants, \textit{pro se}
 \begin{enumerate}[resume=mainlist]
 \item \textbf{Harold Ickes} is a member of the Rules and Bylaws Committee.
 
-\item \textbf{Clara Pratte} is a DNC official who participated in the 2023 mediation communications [Exhibit N].
+\item \textbf{Clara Pratte} is a DNC official who participated in the 2023 mediation communications \Exhibit{N}.
 
-\item \textbf{Ken Martin} served as DNC Vice Chair during the 2023 mediation period [Exhibit N].
+\item \textbf{Ken Martin} served as DNC Vice Chair during the 2023 mediation period \Exhibit{N}.
 
-\item \textbf{James Roosevelt Jr.} is an RBC Co-Chair and signatory to the June 28, 2024 dismissal [Exhibit Z].
+\item \textbf{James Roosevelt Jr.} is an RBC Co-Chair and signatory to the June 28, 2024 dismissal \Exhibit{Z}.
 \end{enumerate}
 
 \section{III. ISSUES PRESENTED}
@@ -181,73 +221,73 @@ Grievants, \textit{pro se}
 \textbf{A. The 2020 Memorandum of Understanding}
 
 \begin{enumerate}[resume=mainlist]
-\item The 2020 MOU settled Credentials Committee challenges [Exhibit T].
+\item The 2020 MOU settled Credentials Committee challenges \Exhibit{T}.
 
-\item Challengers withdrew challenges in exchange for the MOU terms [Exhibit T].
+\item Challengers withdrew challenges in exchange for the MOU terms \Exhibit{T}.
 
-\item The MOU designated Selina Vickers as Challengers' representative [Exhibit T].
+\item The MOU designated Selina Vickers as Challengers' representative \Exhibit{T}.
 
-\item The MOU mandated an "open and transparent process" and RBC supervision [Exhibit T].
+\item The MOU mandated an "open and transparent process" and RBC supervision \Exhibit{T}.
 
-\item Section 2.B.c required that AAC members "be selected by their particular caucus" [Exhibit T].
+\item Section 2.B.c required that AAC members "be selected by their particular caucus" \Exhibit{T}.
 \end{enumerate}
 
 \textbf{B. The June 2, 2021 Script and AAC Formation}
 
 \begin{enumerate}[resume=mainlist]
-\item Vickers distributed Alabama Democratic Party Bylaws to caucus chairs on June 1, 2021 [Exhibit AF].
+\item Vickers distributed Alabama Democratic Party Bylaws to caucus chairs on June 1, 2021 \Exhibit{AF}.
 
-\item Vickers emailed caucus chairs: "I'm attaching a plain agenda and a separate agenda with a script built in" [Exhibit AF].
+\item Vickers emailed caucus chairs: "I'm attaching a plain agenda and a separate agenda with a script built in" \Exhibit{AF}.
 
-\item Vickers instructed: "The script should be considered an 'internal' document and should not be shared" [Exhibit AF].
+\item Vickers instructed: "The script should be considered an 'internal' document and should not be shared" \Exhibit{AF}.
 
-\item Vickers instructed: "Push for a vote and no amendments" [Exhibit AF].
+\item Vickers instructed: "Push for a vote and no amendments" \Exhibit{AF}.
 
-\item The script contained the nomination of Kim Felix as Latino Caucus representative [Exhibit C].
+\item The script contained the nomination of Kim Felix as Latino Caucus representative \Exhibit{C}.
 
-\item The script contained the nomination of Vickers for Parliamentarian/Secretary [Exhibit C].
+\item The script contained the nomination of Vickers for Parliamentarian/Secretary \Exhibit{C}.
 
-\item The script contained pre-written praise for Vickers: "I can think of no one else remotely qualified" [Exhibit C].
+\item The script contained pre-written praise for Vickers: "I can think of no one else remotely qualified" \Exhibit{C}.
 
-\item The Latino Caucus formed on July 6, 2021, thirty-four days after the script named Felix as representative [Exhibit B].
+\item The Latino Caucus formed on July 6, 2021, thirty-four days after the script named Felix as representative \Exhibit{B}.
 
-\item The Board of Appeals found that "the AAC did not follow the approved procedure to notice nominations" [Exhibit F].
+\item The Board of Appeals found that "the AAC did not follow the approved procedure to notice nominations" \Exhibit{F}.
 
-\item The Party applied no remedy [Exhibit F].
+\item The Party applied no remedy \Exhibit{F}.
 \end{enumerate}
 
 \textbf{C. Forensic Metadata and RBC Member Involvement}
 
 \begin{enumerate}[resume=mainlist]
-\item Grievants analyzed document metadata using ExifTool [Exhibits AP--AU].
+\item Grievants analyzed document metadata using ExifTool \Exhibit{AP}--\Exhibit{AU}.
 
-\item Metadata for the November 22, 2020 grievance lists "Harold Ickes" as Author [Exhibit AP].
+\item Metadata for the November 22, 2020 grievance lists "Harold Ickes" as Author \Exhibit{AP}.
 
-\item Metadata for the July 3, 2021 grievance lists "Harold Ickes" as Author [Exhibit AU].
+\item Metadata for the July 3, 2021 grievance lists "Harold Ickes" as Author \Exhibit{AU}.
 
-\item Metadata for the AAC Code of Conduct lists "Harold Ickes" as Author [Exhibit AS].
+\item Metadata for the AAC Code of Conduct lists "Harold Ickes" as Author \Exhibit{AS}.
 
-\item Ickes stated in a September 22, 2021 meeting: "I've said to Selina god knows how many times... at bottom you gotta out vote" [Exhibit A].
+\item Ickes stated in a September 22, 2021 meeting: "I've said to Selina god knows how many times... at bottom you gotta out vote" \Exhibit{A}.
 \end{enumerate}
 
 \textbf{D. Indigenous Caucus Dissolution}
 
 \begin{enumerate}[resume=mainlist]
-\item The Indigenous Caucus dissolved on September 12, 2022 [Exhibit V].
+\item The Indigenous Caucus dissolved on September 12, 2022 \Exhibit{V}.
 
-\item The resolution states AAC leaders "invited Harold Ickes... to participate in all planning... and sought advice on how to silence minorities" [Exhibit V].
+\item The resolution states AAC leaders "invited Harold Ickes... to participate in all planning... and sought advice on how to silence minorities" \Exhibit{V}.
 \end{enumerate}
 
 \textbf{E. The Attendance Policy and May 2025 Removals}
 
 \begin{enumerate}[resume=mainlist]
-\item WVSDEC members Thornton Cooper and Richie Robb filed a grievance on July 15, 2024 warning that the Attendance Policy violated state law [Exhibit X].
+\item WVSDEC members Thornton Cooper and Richie Robb filed a grievance on July 15, 2024 warning that the Attendance Policy violated state law \Exhibit{X}.
 
-\item The Board of Appeals dismissed the grievance for lack of standing [Exhibit Y].
+\item The Board of Appeals dismissed the grievance for lack of standing \Exhibit{Y}.
 
-\item The Party removed elected WVSDEC members, including Grievant Claytor, in May 2025 [Exhibit L].
+\item The Party removed elected WVSDEC members, including Grievant Claytor, in May 2025 \Exhibit{L}.
 
-\item State Chair Pushkin stated the removal was "effective immediately upon issuance of the notice" [Exhibit L].
+\item State Chair Pushkin stated the removal was "effective immediately upon issuance of the notice" \Exhibit{L}.
 
 \item The Party held no pre-deprivation hearings.
 \end{enumerate}
@@ -255,9 +295,9 @@ Grievants, \textit{pro se}
 \textbf{F. The September 25, 2025 Board of Appeals Hearing}
 
 \begin{enumerate}[resume=mainlist]
-\item Claytor filed a formal grievance challenging the policy under \textit{Cornelius} [Exhibit M].
+\item Claytor filed a formal grievance challenging the policy under \textit{Cornelius} \Exhibit{M}.
 
-\item The Board rejected the appeal but granted a "hardship waiver" [Exhibit E].
+\item The Board rejected the appeal but granted a "hardship waiver" \Exhibit{E}.
 
 \item The Board ignored the substantive challenge to the policy's legality.
 
@@ -267,9 +307,9 @@ Grievants, \textit{pro se}
 \textbf{G. Continuing AAC Dysfunction}
 
 \begin{enumerate}[resume=mainlist]
-\item The AAC has failed to meet since May 2023 [Exhibit AA].
+\item The AAC has failed to meet since May 2023 \Exhibit{AA}.
 
-\item Disability Caucus Parliamentarian John Doyle resigned on November 22, 2025 after documenting leadership's failure to respond [Exhibit AD].
+\item Disability Caucus Parliamentarian John Doyle resigned on November 22, 2025 after documenting leadership's failure to respond \Exhibit{AD}.
 \end{enumerate}
 
 \section{FIRST CAUSE OF ACTION: BREACH OF THE 2020 MEMORANDUM OF UNDERSTANDING}
@@ -283,7 +323,7 @@ Grievants, \textit{pro se}
 \begin{enumerate}[resume=mainlist]
 \item MOU Section 2.B.c requires that representatives be "selected by their particular caucus." On June 4, 2021, Kim Felix signed a letter to the DNC Chair as "AAC Co-Chair".
 
-\item The Latino Caucus formed on July 6, 2021 [Exhibit B]. Consequently, the officer assumed authority thirty-four days before the selecting constituency existed. Existence of the constituency is a prerequisite for exercising selection rights. This action appointed the representative by fiat, violating the MOU.
+\item The Latino Caucus formed on July 6, 2021 \Exhibit{B}. Consequently, the officer assumed authority thirty-four days before the selecting constituency existed. Existence of the constituency is a prerequisite for exercising selection rights. This action appointed the representative by fiat, violating the MOU.
 \end{enumerate}
 
 \textbf{Breach II: Violation of Notice (Self-Dealing)}
@@ -291,13 +331,13 @@ Grievants, \textit{pro se}
 \begin{enumerate}[resume=mainlist]
 \item The MOU Preamble guarantees "practical, proper, and effective notice." Selina Vickers scripted her own nomination for Parliamentarian/Secretary, a position absent from the agenda.
 
-\item Vickers distributed a script containing the nomination and self-authored praise: "I can think of no one else remotely qualified" [Exhibit C]. Vickers concealed the position from the agenda and pre-arranged her acclamation. This denied eligible members the right to run.
+\item Vickers distributed a script containing the nomination and self-authored praise: "I can think of no one else remotely qualified" \Exhibit{C}. Vickers concealed the position from the agenda and pre-arranged her acclamation. This denied eligible members the right to run.
 \end{enumerate}
 
 \textbf{Breach III: Suppression of Open Process}
 
 \begin{enumerate}[resume=mainlist]
-\item The MOU mandates an "open and transparent process." Vickers distributed formation documents marked "internal" and instructed chairs: "Push for a vote and no amendments" [Exhibit AF].
+\item The MOU mandates an "open and transparent process." Vickers distributed formation documents marked "internal" and instructed chairs: "Push for a vote and no amendments" \Exhibit{AF}.
 
 \item A secret script violates transparency. The instruction to block amendments stripped members of their right to deliberate.
 \end{enumerate}
@@ -315,7 +355,7 @@ Grievants, \textit{pro se}
 \begin{enumerate}[resume=mainlist]
 \item Grievants re-allege all preceding paragraphs.
 
-\item West Virginia Code \S~3-1-9 sets the term of State Executive Committee members at four years. In \textit{State ex rel. Cornelius v. Warner}, the court ruled that "duly elected party county executive committee members cannot be removed from office without due process." [cite_start]The court held that summary removal overrides the will of the voters, "thereby subverting the democratic process" [Exhibit W] [cite: 319-321].
+\item West Virginia Code \S~3-1-9 sets the term of State Executive Committee members at four years. In \textit{State ex rel. Cornelius v. Warner}, the court ruled that "duly elected party county executive committee members cannot be removed from office without due process." [cite_start]The court held that summary removal overrides the will of the voters, "thereby subverting the democratic process" \Exhibit{W} [cite: 319-321].
 \end{enumerate}
 
 \textbf{Claim for Relief}
@@ -409,91 +449,73 @@ Grievants, \textit{pro se}
 
 \section{VERIFICATION}
 
-\textbf{Declaration of Seth Sturm}
-
-I, Seth Sturm, declare under penalty of perjury that I have read the foregoing Verified Formal Challenge and the facts stated herein are true and correct to the best of my knowledge.
-
-\vspace{1cm}
-\noindent Executed on: December 12, 2025
-
-\vspace{1cm}
-\noindent \makebox[3in]{\hrulefill}\\
-Seth Sturm, Grievant
+\VerificationBlock{\GrievantA}{Grievant}
 
 \vspace{1cm}
 
-\textbf{Declaration of Mary Ann Claytor}
-
-I, Mary Ann Claytor, declare under penalty of perjury that I have read the foregoing Verified Formal Challenge and the facts stated herein are true and correct to the best of my knowledge.
-
-\vspace{1cm}
-\noindent Executed on: December 12, 2025
-
-\vspace{1cm}
-\noindent \makebox[3in]{\hrulefill}\\
-Mary Ann Claytor, Grievant
+\VerificationBlock{\GrievantB}{Grievant}
 
 \section{EXHIBIT LIST}
 
 \begin{description}
-    \item[{[Exhibit A]}] \textbf{September 22, 2021 Video/Transcript (Ickes)}
-    \item[{[Exhibit B]}] \textbf{June 2, 2021 AAC Meeting Transcript}
-    \item[{[Exhibit C]}] \textbf{June 2, 2021 Script}
-    \item[{[Exhibit D]}] \textbf{August 17, 2021 AAC Meeting Transcript}
-    \item[{[Exhibit E]}] \textbf{September 25, 2025 BOA Hearing Video/Transcript}
-    \item[{[Exhibit F]}] \textbf{WVDP Board of Appeals Resolution (November 29, 2021)}
-    \item[{[Exhibit G]}] \textbf{Mary Ann Claytor Email (September 1, 2021)}
-    \item[{[Exhibit H]}] \textbf{Mary Ann Claytor Email (September 20, 2021)}
-    \item[{[Exhibit I]}] \textbf{Email Chain on AAC Agenda (September 15, 2021)}
-    \item[{[Exhibit J]}] \textbf{Sturm-Bush Correspondence (November 12, 2021)}
-    \item[{[Exhibit K]}] \textbf{Mary Ann Claytor Email (September 23, 2021)}
-    \item[{[Exhibit L]}] \textbf{State Chair Pushkin Correspondence (May 30, 2025)}
-    \item[{[Exhibit M]}] \textbf{Mary Ann Claytor Formal Grievance (July 28, 2025)}
-    \item[{[Exhibit N]}] \textbf{DNC Official Clara Pratte Correspondence (August 2023)}
-    \item[{[Exhibit O]}] \textbf{DNC Official Clara Pratte Correspondence (September 2023)}
-    \item[{[Exhibit P]}] \textbf{DNC Official Clara Pratte Correspondence (October 2023)}
-    \item[{[Exhibit Q]}] \textbf{DNC Official Clara Pratte Correspondence (December 2023)}
-    \item[{[Exhibit R]}] \textbf{December 2023 SEC Meeting Transcript}
-    \item[{[Exhibit S]}] \textbf{March 18, 2024 SEC Hearing Transcript}
-    \item[{[Exhibit T]}] \textbf{2020 Memorandum of Understanding}
-    \item[{[Exhibit U]}] \textbf{WVDP Motion to Dismiss (2023)}
-    \item[{[Exhibit V]}] \textbf{Indigenous Caucus Resolution of Dissolution}
-    \item[{[Exhibit W]}] \textbf{State ex rel. Cornelius v. Warner Decision (2022)}
-    \item[{[Exhibit X]}] \textbf{Cooper \& Robb Appeal (July 15, 2024)}
-    \item[{[Exhibit Y]}] \textbf{Board of Appeals Written Opinion (June 23, 2025)}
-    \item[{[Exhibit Z]}] \textbf{June 28, 2024 RBC Rejection Letter}
-    \item[{[Exhibit AA]}] \textbf{Disability Caucus Correspondence (January-July 2025)}
-    \item[{[Exhibit AB]}] \textbf{AAC Election Ballot (June 15, 2022)}
-    \item[{[Exhibit AC]}] \textbf{Disability Caucus Correspondence (June 19, 2025)}
-    \item[{[Exhibit AD]}] \textbf{Disability Caucus Resignation (November 22, 2025)}
-    \item[{[Exhibit AE]}] \textbf{Vickers Website (Wayback Machine)}
-    \item[{[Exhibit AF]}] \textbf{Vickers Emails (May 31--June 1, 2021)}
-    \item[{[Exhibit AG]}] \textbf{Robert Baker Email (August 20, 2021)}
-    \item[{[Exhibit AH]}] \textbf{Vickers Email (September 26, 2021)}
-    \item[{[Exhibit AI]}] \textbf{Black Caucus Script (June 1, 2021)}
-    \item[{[Exhibit AJ]}] \textbf{Vickers Strategic Coaching (June 3, 2021)}
-    \item[{[Exhibit AK]}] \textbf{Vickers Strategic Framing Email (June 1, 2021)}
-    \item[{[Exhibit AL]}] \textbf{Resolution of Diversity Caucuses with Metadata}
-    \item[{[Exhibit AM]}] \textbf{Black Caucus Agenda (June 15, 2021)}
-    \item[{[Exhibit AN]}] \textbf{Ickes Grievance Draft with Metadata (July 3, 2021)}
-    \item[{[Exhibit AO]}] \textbf{Questions to Consider}
-    \item[{[Exhibit AP]}] \textbf{November 22, 2020 Grievance with Metadata}
-    \item[{[Exhibit AQ]}] \textbf{August 16, 2021 AAC Agenda with Metadata}
-    \item[{[Exhibit AR]}] \textbf{August 17, 2021 Procedural Rules with Metadata}
-    \item[{[Exhibit AS]}] \textbf{September 11, 2021 Code of Conduct with Metadata}
-    \item[{[Exhibit AT]}] \textbf{September 15, 2021 AAC Agenda with Metadata}
-    \item[{[Exhibit AU]}] \textbf{July 3, 2021 Final Grievance with Metadata}
-    \item[{[Exhibit AV]}] \textbf{Alabama Independent Hearing Officer Appointment}
-    \item[{[Exhibit AW]}] \textbf{RBC Alarm Over Alabama Violations}
-    \item[{[Exhibit AX]}] \textbf{AAC Email Chain (August 2021)}
-    \item[{[Exhibit AY]}] \textbf{Bylaws Subcommittee Report (September 2021)}
-    \item[{[Exhibit AZ]}] \textbf{Vickers Ghostwriting Email (August 17, 2021)}
-    \item[{[Exhibit BA]}] \textbf{Assadzandi Social Media Coordination (August 21, 2021)}
-    \item[{[Exhibit BB]}] \textbf{Clifford Coordination Email (August 22, 2021)}
-    \item[{[Exhibit BC]}] \textbf{Disability Resolution and Correspondence (September 2021)}
-    \item[{[Exhibit BD]}] \textbf{AAC Letter to State Chair (December 5, 2021)}
-    \item[{[Exhibit BE]}] \textbf{WVDP Motion to Dismiss (July 24, 2023)}
-    \item[{[Exhibit BF]}] \textbf{Betty Rivard Email (August 2021)}
+    \item[{\Exhibit{A}}] \textbf{September 22, 2021 Video/Transcript (Ickes)}
+    \item[{\Exhibit{B}}] \textbf{June 2, 2021 AAC Meeting Transcript}
+    \item[{\Exhibit{C}}] \textbf{June 2, 2021 Script}
+    \item[{\Exhibit{D}}] \textbf{August 17, 2021 AAC Meeting Transcript}
+    \item[{\Exhibit{E}}] \textbf{September 25, 2025 BOA Hearing Video/Transcript}
+    \item[{\Exhibit{F}}] \textbf{WVDP Board of Appeals Resolution (November 29, 2021)}
+    \item[{\Exhibit{G}}] \textbf{Mary Ann Claytor Email (September 1, 2021)}
+    \item[{\Exhibit{H}}] \textbf{Mary Ann Claytor Email (September 20, 2021)}
+    \item[{\Exhibit{I}}] \textbf{Email Chain on AAC Agenda (September 15, 2021)}
+    \item[{\Exhibit{J}}] \textbf{Sturm-Bush Correspondence (November 12, 2021)}
+    \item[{\Exhibit{K}}] \textbf{Mary Ann Claytor Email (September 23, 2021)}
+    \item[{\Exhibit{L}}] \textbf{State Chair Pushkin Correspondence (May 30, 2025)}
+    \item[{\Exhibit{M}}] \textbf{Mary Ann Claytor Formal Grievance (July 28, 2025)}
+    \item[{\Exhibit{N}}] \textbf{DNC Official Clara Pratte Correspondence (August 2023)}
+    \item[{\Exhibit{O}}] \textbf{DNC Official Clara Pratte Correspondence (September 2023)}
+    \item[{\Exhibit{P}}] \textbf{DNC Official Clara Pratte Correspondence (October 2023)}
+    \item[{\Exhibit{Q}}] \textbf{DNC Official Clara Pratte Correspondence (December 2023)}
+    \item[{\Exhibit{R}}] \textbf{December 2023 SEC Meeting Transcript}
+    \item[{\Exhibit{S}}] \textbf{March 18, 2024 SEC Hearing Transcript}
+    \item[{\Exhibit{T}}] \textbf{2020 Memorandum of Understanding}
+    \item[{\Exhibit{U}}] \textbf{WVDP Motion to Dismiss (2023)}
+    \item[{\Exhibit{V}}] \textbf{Indigenous Caucus Resolution of Dissolution}
+    \item[{\Exhibit{W}}] \textbf{State ex rel. Cornelius v. Warner Decision (2022)}
+    \item[{\Exhibit{X}}] \textbf{Cooper \& Robb Appeal (July 15, 2024)}
+    \item[{\Exhibit{Y}}] \textbf{Board of Appeals Written Opinion (June 23, 2025)}
+    \item[{\Exhibit{Z}}] \textbf{June 28, 2024 RBC Rejection Letter}
+    \item[{\Exhibit{AA}}] \textbf{Disability Caucus Correspondence (January-July 2025)}
+    \item[{\Exhibit{AB}}] \textbf{AAC Election Ballot (June 15, 2022)}
+    \item[{\Exhibit{AC}}] \textbf{Disability Caucus Correspondence (June 19, 2025)}
+    \item[{\Exhibit{AD}}] \textbf{Disability Caucus Resignation (November 22, 2025)}
+    \item[{\Exhibit{AE}}] \textbf{Vickers Website (Wayback Machine)}
+    \item[{\Exhibit{AF}}] \textbf{Vickers Emails (May 31--June 1, 2021)}
+    \item[{\Exhibit{AG}}] \textbf{Robert Baker Email (August 20, 2021)}
+    \item[{\Exhibit{AH}}] \textbf{Vickers Email (September 26, 2021)}
+    \item[{\Exhibit{AI}}] \textbf{Black Caucus Script (June 1, 2021)}
+    \item[{\Exhibit{AJ}}] \textbf{Vickers Strategic Coaching (June 3, 2021)}
+    \item[{\Exhibit{AK}}] \textbf{Vickers Strategic Framing Email (June 1, 2021)}
+    \item[{\Exhibit{AL}}] \textbf{Resolution of Diversity Caucuses with Metadata}
+    \item[{\Exhibit{AM}}] \textbf{Black Caucus Agenda (June 15, 2021)}
+    \item[{\Exhibit{AN}}] \textbf{Ickes Grievance Draft with Metadata (July 3, 2021)}
+    \item[{\Exhibit{AO}}] \textbf{Questions to Consider}
+    \item[{\Exhibit{AP}}] \textbf{November 22, 2020 Grievance with Metadata}
+    \item[{\Exhibit{AQ}}] \textbf{August 16, 2021 AAC Agenda with Metadata}
+    \item[{\Exhibit{AR}}] \textbf{August 17, 2021 Procedural Rules with Metadata}
+    \item[{\Exhibit{AS}}] \textbf{September 11, 2021 Code of Conduct with Metadata}
+    \item[{\Exhibit{AT}}] \textbf{September 15, 2021 AAC Agenda with Metadata}
+    \item[{\Exhibit{AU}}] \textbf{July 3, 2021 Final Grievance with Metadata}
+    \item[{\Exhibit{AV}}] \textbf{Alabama Independent Hearing Officer Appointment}
+    \item[{\Exhibit{AW}}] \textbf{RBC Alarm Over Alabama Violations}
+    \item[{\Exhibit{AX}}] \textbf{AAC Email Chain (August 2021)}
+    \item[{\Exhibit{AY}}] \textbf{Bylaws Subcommittee Report (September 2021)}
+    \item[{\Exhibit{AZ}}] \textbf{Vickers Ghostwriting Email (August 17, 2021)}
+    \item[{\Exhibit{BA}}] \textbf{Assadzandi Social Media Coordination (August 21, 2021)}
+    \item[{\Exhibit{BB}}] \textbf{Clifford Coordination Email (August 22, 2021)}
+    \item[{\Exhibit{BC}}] \textbf{Disability Resolution and Correspondence (September 2021)}
+    \item[{\Exhibit{BD}}] \textbf{AAC Letter to State Chair (December 5, 2021)}
+    \item[{\Exhibit{BE}}] \textbf{WVDP Motion to Dismiss (July 24, 2023)}
+    \item[{\Exhibit{BF}}] \textbf{Betty Rivard Email (August 2021)}
 \end{description}
 
 \end{document}
