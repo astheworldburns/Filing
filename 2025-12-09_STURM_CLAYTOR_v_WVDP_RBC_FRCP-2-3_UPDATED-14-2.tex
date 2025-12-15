@@ -1,0 +1,1329 @@
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+\documentclass{article}
+
+% Geometry first
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\setlength{\footskip}{15pt}
+
+
+\usepackage[OT1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{microtype}
+
+% Table packages
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\usepackage{longtable}
+
+% Layout packages
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\usepackage{parskip}
+\setlength{\parskip}{\baselineskip}
+
+\usepackage{setspace}
+\doublespacing
+
+\usepackage{pdfpages}
+\usepackage{quoting}
+\quotingsetup{leftmargin=1in, rightmargin=1in, vskip=-1.5mm}
+\makeatletter
+\g@addto@macro\quoting\singlespacing
+\g@addto@macro\quoting{\vspace{-2mm}}
+\makeatother
+\makeatletter
+\renewenvironment{quotation}
+    {\list{}{\listparindent=0pt
+    \itemindent    \listparindent
+    \leftmargin=1in
+    \rightmargin=1in
+    \topsep=-1mm
+    \parsep        \z@ \@plus\p@}
+    \item\relax}
+    {\endlist}
+\makeatother
+
+\renewcommand{\normalsize}{\fontsize{12}{14.5}\selectfont}
+\newcommand*{\bsi}{
+    \fontsize{16}{15}
+    \selectfont}
+
+\usepackage{enumitem}
+\usepackage{alphalph}
+\makeatletter
+\newcommand{\enumaliph}[1]{\expandafter\@enumaliph\csname c@#1\endcsname}
+\newcommand{\@enumaliph}[1]{\AlphAlph{#1}}
+\AddEnumerateCounter{\enumaliph}{\@enumaliph}{AA}
+\makeatother
+
+\usepackage{needspace}
+
+\raggedright
+\widowpenalty=10000
+\clubpenalty=10000
+\brokenpenalty=10000
+
+\newcommand{\tab}{\hspace*{6.5mm}}
+\newenvironment{tightcenter}{%
+    \setlength\topsep{0pt}
+    \setlength\parskip{0pt}
+        \begin{center}
+        }{%
+        \end{center}
+        }
+
+% Hyperref and bookmark LAST
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+\usepackage{bookmark}
+\bookmarksetup{numbered}
+
+\newcommand{\exhibitslip}[3]{%
+    \newpage
+    \phantomsection
+    \hypertarget{exhibit#1}{}
+    \bookmark[page=\thepage]{EXHIBIT #1}
+    \vspace*{\fill}
+    \begin{center}
+    {\fontsize{24}{28}\selectfont\bfseries EXHIBIT #1}
+    \vspace{1cm}
+    
+    {\fontsize{14}{18}\selectfont #2}
+    \end{center}
+    \vspace*{\fill}
+    \newpage
+    \includepdf[pages=-]{#3}
+}
+
+\pagestyle{fancy}
+\rfoot{\vspace{-10mm} 
+STURM \& CLAYTOR v. WVDP, et al.}
+\cfoot{\vspace{-5mm} {- \thepage ~-} }
+
+\begin{document}
+\begin{singlespace*}
+\bookmark[page=\thepage]{CAPTION}
+\label{caption}
+Seth Sturm\\
+377 Messer Run Rd\\
+Metz, WV 26585\\
++1 (681) 526-7605\\
+sethsturm@gmail.com
+\newline \newline
+Mary Ann Claytor\\
+221 Oliver St\\
+St. Albans, WV 25177\\
++1 (304) 993-1939\\
+maryannclaytor@gmail.com
+\newline \newline
+Grievants, \textit{pro se}
+\end{singlespace*}
+\vspace*{8mm}
+\begin{tightcenter}
+\fontsize{11}{12}\selectfont
+BEFORE THE RULES AND BYLAWS COMMITTEE \\ OF THE DEMOCRATIC NATIONAL COMMITTEE
+\end{tightcenter}
+\vspace{9mm}
+{
+\begin{minipage}[t]{3in}
+\begin{singlespace}
+\vspace{-7mm}
+SETH STURM and MARY ANN CLAYTOR,\newline
+
+\tab \tab \tab Grievants, \newline
+\tab \tab v. \newline
+ \newline
+WEST VIRGINIA DEMOCRATIC PARTY; \\
+WEST VIRGINIA STATE DEMOCRATIC EXECUTIVE COMMITTEE; \\
+RULES AND BYLAWS COMMITTEE, \\
+           \newline
+\tab \tab \tab Respondents.
+\end{singlespace}
+\makebox[3in]{\hrulefill}
+\end{minipage}
+	\begin{minipage}[t]{5mm}
+		\begin{singlespace*}
+			:\\:\\:\\:\\:\\:\\:\\:\\:\\:\\:\\:\\:\\:
+		\end{singlespace*}
+	\end{minipage}
+\begin{minipage}[t]{3in}
+
+\begin{singlespace}
+
+\vspace{-3mm}
+
+Filing Date: December 12, 2025
+
+\medskip
+
+VERIFIED FORMAL CHALLENGE
+
+\medskip
+
+Relief Requested:
+\begin{enumerate}[leftmargin=*, label=(\alph*), nosep]
+\item Appointment of Independent Hearing Officer
+\item Immediate reinstatement pending Independent Hearing Officer determination
+\item Recusal of affected Rules and Bylaws Committee members
+\end{enumerate}
+
+\end{singlespace}
+
+\end{minipage}
+	}
+\vspace{5mm}
+
+
+\newpage
+\begin{center}
+TABLE OF CONTENTS
+\end{center}
+\def\jurisdictionname{I. JURISDICTION AND TIMELINESS}
+\def\partiesname{II. PARTIES}
+\def\summaryname{III. SUMMARY OF ARGUMENT}
+\def\factsname{IV. STATEMENT OF FACTS}
+\def\countone{FIRST CAUSE OF ACTION: BREACH OF THE 2020 MEMORANDUM OF UNDERSTANDING}
+\def\counttwo{SECOND CAUSE OF ACTION: DENIAL OF DUE PROCESS}
+\def\countthree{THIRD CAUSE OF ACTION: VIOLATION OF WEST VIRGINIA CODE}
+\def\countfour{FOURTH CAUSE OF ACTION: DISPARATE ENFORCEMENT}
+\def\countfive{FIFTH CAUSE OF ACTION: UNDISCLOSED COORDINATION AND STRUCTURAL CONFLICT}
+\def\prayername{PRAYER FOR RELIEF}
+\def\hearingname{DEMAND FOR HEARING}
+\def\reservationname{RESERVATION OF RIGHTS}
+\def\verificationname{VERIFICATION}
+\def\exhibitsname{EXHIBIT LIST}
+
+
+\def\naturename{NATURE OF THE ACTION}
+\def\prelimname{PRELIMINARY STATEMENT}
+
+\prelimname \dotfill \pageref{prelim}\\
+NATURE OF THE ACTION \dotfill \pageref{nature}\\
+\jurisdictionname \dotfill \pageref{jurisdiction}\\
+\partiesname \dotfill \pageref{parties}\\
+\summaryname \dotfill \pageref{summary}\\
+\factsname \dotfill \pageref{facts}\\
+\countone \dotfill \pageref{count1}\\
+\counttwo \dotfill \pageref{count2}\\
+\countthree \dotfill \pageref{count3}\\
+\countfour \dotfill \pageref{count4}\\
+\countfive \dotfill \pageref{count5}\\
+\prayername \dotfill \pageref{prayer}\\
+\hearingname \dotfill \pageref{hearing}\\
+\reservationname \dotfill \pageref{reservation}\\
+\verificationname \dotfill \pageref{verification}\\
+\exhibitsname \dotfill \pageref{exhibits}\\
+
+
+\newpage
+\begin{center}
+\textbf{VERIFIED FORMAL CHALLENGE}
+\end{center}
+
+Grievants (referred to as ``challengers'' in some governing documents), for their Verified Formal Challenge to the Rules and Bylaws Committee of the Democratic National Committee ("DNC"), allege as follows:
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{PRELIMINARY STATEMENT}
+\phantomsection
+\label{prelim}
+\textbf{PRELIMINARY STATEMENT}
+\end{center}
+
+The West Virginia Democratic Party ("WVDP") is not in compliance with the diversity-governance framework the DNC required and the parties adopted in 2020. The Affirmative Action Committee ("AAC") has not met since May 2023. Duly elected members of the West Virginia State Democratic Executive Committee ("WVSDEC") were removed effective immediately under an attendance policy without any pre-deprivation hearing. A Kanawha County Circuit Court has held that these elected party offices create a protected property interest and cannot be taken away without a compelling, adjudicated showing of good cause consistent with due process [Exhibit W]. Multiple key grievances and AAC governance documents circulated as local work product contain embedded document-property fields that list ``Harold Ickes'' in the ``Author'' field---a fact not disclosed on the face of the filings and therefore unavailable to affected members when evaluating neutrality and process integrity.
+
+The Rules and Bylaws Committee ("RBC") signed the 2020 Memorandum of Understanding ("MOU") [Exhibit T] and assumed supervisory responsibility for diversity implementation. While supervising, legal grievances and committee governance documents were filed under the names of West Virginia Democrats ([Exhibit AP], [Exhibit AU]). In the filed documents' metadata, RBC member Harold Ickes is listed in the ``Author'' field. That authorship does not appear in the text of the filings, preventing members from evaluating the role of a national party official in materials presented as local committee work product. Those documents established the control structures now used to remove elected members, block diversity bodies from meeting, and apply unlawful attendance rules—all while the RBC has declined to intervene.
+
+When Alabama faced comparable violations, the RBC appointed an Independent Hearing Officer ("IHO") and ordered remedies [Exhibit AV]. Grievants ask for the same. If the RBC declines to appoint an Independent Hearing Officer or otherwise provide a neutral internal remedy, Grievants intend to seek judicial review of whether the MOU and Party Charter create enforceable rights and whether the RBC's supervisory role can be exercised consistent with basic neutrality when an RBC member appears in the authorship metadata of key governance filings.
+
+The DNC has articulated clear standards for intervention. In Alabama, the RBC Co-Chair stated the committee was ``alarmed by the bylaws and the operational allegations which seem to prevent the full participation of members'' [Exhibit AW]. The DNC's hearing officer found that ``lack of notice,'' ``lack of due process,'' and ``lack of transparency'' warranted invalidating challenged proceedings [Exhibit AV]. Every one of these conditions exists in West Virginia: proceedings conducted under scripts marked ``internal,'' the designation of an At-Large WVSDEC seat to a representative for a constituency that had not yet organized to conduct its own nomination, a Board of Appeals that confirmed procedural violations but applied no remedy, and elected members removed without pre-deprivation hearings. The RBC intervened in Alabama. It has not intervened in West Virginia. Grievants are entitled to know why.
+
+Federal courts have historically deferred to party autonomy because the Democratic Party committed after 1968 and 1972 to police itself fairly. The RBC exists because that commitment was made. When document metadata lists an RBC member in the ``Author'' field of legal documents filed for one faction without disclosure while his committee claims to provide neutral supervision, and the committee declines to correct ongoing violations of diversity requirements and state law, this proceeding presents a credibility and due-process risk for the Party's diversity-governance framework. Grievants reserve all rights to seek judicial review if this Committee declines to provide a neutral internal remedy.
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{NATURE OF THE ACTION}
+\phantomsection
+\label{nature}
+\textbf{NATURE OF THE ACTION}
+\end{center}
+
+\begin{enumerate}[series=body, label=\arabic*., leftmargin=0.5in]
+\item This challenge arises from a systematic violation of democratic rights with national implications.
+\item By enabling procedural irregularities in West Virginia, the DNC has allowed the disenfranchisement of voters, the assumption of county committee authority, and the removal of elected party members without due process.
+\item Grievants seek to enforce the 2020 Memorandum of Understanding and DNC Charter to cure these harms, restore the property rights of elected members, and ensure that the Rules and Bylaws Committee applies uniform standards of enforcement across all state parties.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\jurisdictionname}
+\phantomsection
+\label{jurisdiction}
+\textbf{\jurisdictionname}
+\end{center}
+
+\textbf{Basis for Jurisdiction}
+
+\begin{enumerate}[series=body, label=\arabic*., leftmargin=0.5in]
+\item At the time of execution, RBC Co-Chairs James Roosevelt Jr. and Lorraine Miller signed the 2020 Memorandum of Understanding [Exhibit T].
+\item The MOU is a written agreement executed by the parties, supported by consideration (withdrawal of Credentials Committee challenges in exchange for its terms), and includes ongoing compliance obligations [Exhibit T].
+\item The MOU preamble states the RBC accepted jurisdiction over ``party officers and positions'' and ``general compliance with DNC and State Party rules'' [Exhibit T].
+\item DNC Regulation 3.2 establishes procedures for RBC review of challenges to state party governance.
+\end{enumerate}
+
+\textbf{Timeliness}
+
+\begin{enumerate}[resume=body]
+\item This challenge addresses the May 2025 removals of elected WVSDEC members and the September 25, 2025 Board of Appeals rulings [Exhibit E]. These events occurred within twelve months preceding this filing.
+
+\item The June 28, 2024 RBC dismissal [Exhibit Z] is included to document exhaustion of remedies and to establish the structural conflict that prevents neutral adjudication.
+
+\item The June 2, 2021 AAC formation violated MOU requirements. The Board of Appeals confirmed procedural violations [Exhibit F]. Officers elected through that process continue to hold those positions. This challenge is timely as to the 2021 formation because the violation is ongoing.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\partiesname}
+\phantomsection
+\label{parties}
+\textbf{\partiesname}
+\end{center}
+
+\textbf{Grievants}
+
+\begin{enumerate}[resume=body]
+\item \textbf{Seth Sturm} is a registered Democrat and citizen of the State of West Virginia. Sturm is the Founding Chair of the WVDP Indigenous Caucus.
+
+\item \textbf{Mary Ann Claytor} is a registered Democrat and citizen of the State of West Virginia. Claytor is the Chair of the WVDP Black Caucus and a duly elected member of the West Virginia State Democratic Executive Committee from the 7th Senatorial District.
+
+\textbf{Respondents}
+
+\item \textbf{West Virginia Democratic Party} (WVDP) is an unincorporated political association organized under the laws of the State of West Virginia, exercising authority delegated by West Virginia Code \S~3-1-9.
+
+\item \textbf{West Virginia State Democratic Executive Committee} (WVSDEC) is the governing body of the WVDP, established by West Virginia Code \S~3-1-9.
+
+\item \textbf{Mike Pushkin} is the State Chair of the West Virginia Democratic Party. Pushkin is named in his official capacity.
+
+\item \textbf{Selina Vickers} is the Challengers' designated representative under the 2020 MOU and Female Co-Chair of the Affirmative Action Committee. Vickers is named in her official capacity.
+
+\textbf{DNC Officials}
+
+\item \textbf{Harold Ickes} is a member of the Rules and Bylaws Committee. Document metadata lists ``Harold Ickes'' in the ``Author'' field of grievances and AAC governance documents filed during the period of RBC supervision. Ickes is named in his official capacity.
+
+\item \textbf{Clara Pratte} is a Democratic National Committee official. Pratte is named in her official capacity.
+
+\item \textbf{Ken Martin} is the current DNC Chair. At the time of the events described herein, Martin served as DNC Vice Chair. Martin is named in his official capacity.
+
+\item \textbf{Rules and Bylaws Committee} (RBC) is a standing committee of the Democratic National Committee with supervisory authority over state party compliance and implementation of the 2020 Memorandum of Understanding.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\summaryname}
+\phantomsection
+\label{summary}
+\textbf{\summaryname}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item This challenge presents five claims supported by documentary evidence.
+
+\item \textbf{First Cause of Action} alleges breach of the MOU. The MOU Preamble required an "open and transparent process." The MOU required that AAC members "be selected by their particular caucus" and that nominations be "conducted by caucuses." The Board of Appeals confirmed procedural violations in the June 2, 2021 formation. Document metadata lists an RBC member as the author of grievances and committee documents filed while his committee supervised implementation. A supervisor whose member is listed as the author of filings used by one faction, without disclosure in the filing itself, cannot credibly function as a neutral supervisor.
+
+\item \textbf{Second Cause of Action} alleges denial of due process. Pre-enforcement challenges to the Attendance Policy were dismissed for lack of standing. Post-enforcement challenges were rejected as untimely. The legality of the policy has never been adjudicated on its merits.
+
+\item \textbf{Third Cause of Action} alleges violation of West Virginia Code. West Virginia Code \S~3-1-9(f) assigns vacancy-filling authority to county executive committees. The Board of Appeals granted ``hardship waivers'' restoring removed members. If removal created vacancies, the statute assigns filling authority to county committees. If removal did not create vacancies, no bylaw or statute authorizes the Board's action.
+
+\item \textbf{Fourth Cause of Action}  alleges disparate enforcement. The West Virginia and Alabama AAC structures were modeled identically, and the same RBC member participated in both states' processes. In Alabama, the RBC appointed an Independent Hearing Officer [Exhibit AV]. In West Virginia, the RBC dismissed. In West Virginia, document metadata lists an RBC member as the author of grievances and committee rules. State parties should receive consistent treatment under uniform enforcement standards.
+
+\item \textbf{Fifth Cause of Action} alleges undisclosed coordination and structural conflict. Document metadata lists an RBC member in the ``Author'' field of grievances and committee rules filed for one faction while his committee claimed neutral supervision. This was not disclosed on the face of the filings. The RBC's supervisory function was structurally compromised.
+
+\item Grievants seek appointment of an Independent Hearing Officer with authority to establish facts on the record and issue binding remedies.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\factsname}
+\phantomsection
+\label{facts}
+\textbf{\factsname}
+\end{center}
+
+\textbf{A. The 2020 Memorandum of Understanding}
+
+\begin{enumerate}[resume=body]
+\item The 2020 Memorandum of Understanding [Exhibit T] was the negotiated settlement of Credentials Committee challenges.
+\item Challengers withdrew their challenges in exchange for the MOU's terms [Exhibit T].
+\item The MOU designated Selina Vickers as Challengers' representative [Exhibit T].
+\item The MOU imposed RBC supervision over implementation [Exhibit T].
+\item MOU Section 2.B.c required that AAC members ``be selected by their particular caucus'' [Exhibit T].
+\item MOU Section 2.B.c required ``a reasonable budget to conduct the work of the AA Committee'' [Exhibit T].
+\item The MOU Preamble required an ``open and transparent process'' [Exhibit T].
+\end{enumerate}
+
+\textbf{B. The June 2, 2021 Script and AAC Formation}
+
+\begin{enumerate}[resume=body]
+\item On May 13, 2021, Vickers hosted a training with Harold Ickes [Exhibit AE].
+
+\item On June 1, 2021, Vickers distributed Alabama Democratic Party Bylaws to caucus chairs, writing: ``The procedures for the caucuses are built into the Alabama Bylaws'' [Exhibit AF].
+
+\item As of June 2, 2021, the Latino Caucus, Indigenous Caucus, and Asian American/Pacific Islander Caucus had not been formed [Exhibit B].
+
+\item On May 31, 2021, Vickers emailed caucus chairs: ``I put together what I think is an agenda for most of the caucuses... I'm attaching a plain agenda and a separate agenda with a script built in'' [Exhibit AF].
+
+\item Vickers wrote: ``The script should be considered an `internal' document and should not be shared with anyone other than your co-chair'' [Exhibit AF].
+
+\item Vickers wrote: ``Push for a vote and no amendments, otherwise it will take too much time'' [Exhibit AF].
+
+\item On June 1, 2021, Vickers wrote to caucus chairs: ``She's scared. Friends, she is losing control and she knows it'' [Exhibit AK].
+
+\item The script [Exhibit C] contained nominations with verbatim language for caucus chairs to deliver, including Kim Felix as Latino Caucus representative and Vickers herself for Parliamentarian/Secretary.
+
+\item The script contained pre-written text for Vickers' nomination: ``Ms.\ Vickers has been instrumental... I can think of no one else remotely qualified'' [Exhibit C].
+
+\item The Latino Caucus was formed on July 6, 2021---thirty-four days after the script named Felix as its representative [Exhibit B].
+
+\item The June 2, 2021 meeting transcript [Exhibit B] records a participant asking whether nominations could proceed for a caucus that had ``not yet convened nor nominated our co-chairs or voted.''
+
+\item On August 20, 2021, Robert Baker distributed a draft Affirmative Action Plan, writing: ``I took the liberty of taking the Alabama Affirmative Action plan and changing it to replace Alabama with West Virginia'' [Exhibit AG].
+
+\item On November 29, 2021, the Board of Appeals found that ``the AAC did not follow the approved procedure to notice nominations and elections'' [Exhibit F].
+
+\item The Board of Appeals applied no remedy [Exhibit F].
+
+\item Vickers retained her position and on June 15, 2022 was elected Female Co-Chair of the AAC [Exhibit AB].
+\end{enumerate}
+
+\textbf{B.1. Caucus-Level Scripting}
+
+\begin{enumerate}[resume=body]
+\item Vickers distributed a script for the June 1, 2021 Black Caucus meeting [Exhibit AI].
+
+\item The script instructed the chair to state: ``I strongly urge that, due to time constraints, that no amendments to the resolution be made'' [Exhibit AI].
+
+\item The script stated that amendments would ``defeat the purpose of unity on the resolution among the 6 caucuses'' [Exhibit AI].
+
+\item The resolution passed by all six caucuses was pre-written. Document metadata shows it was created on May 31, 2021 at 9:42 PM [Exhibit AL].
+
+\item Vickers distributed strategic coaching documents instructing caucus chairs to ``make a motion... knowing that it will be voted down'' in order to ``force an explanation from Biafore'' [Exhibit AJ].
+
+\item Vickers distributed additional coaching documents for caucus chair preparation [Exhibit AO].
+\end{enumerate}
+
+\textbf{C. RBC Member Listed as Document Author and the September 22, 2021 Meeting}
+
+\begin{enumerate}[resume=body]
+\item \textbf{Metadata Reports (Foundation).} For certain exhibits, Grievants attach metadata reports generated using ExifTool from the underlying electronic files in their possession. The reports reflect the embedded document-property fields present at the time of extraction, including ``Author,'' ``Creator,'' and ``Create Date.'' These reports are offered to show what the files' embedded properties state. Grievants do not rely on metadata alone and will produce the underlying files for inspection upon request. The reports list ``Harold Ickes'' in the ``Author'' field for seven documents identified below and attached as exhibits.
+
+\item On November 22, 2020, a grievance was filed against State Chair Biafore in the name of Selina Vickers [Exhibit AP]. Document metadata lists ``Harold Ickes'' in the ``Author'' field. The RBC was supervising MOU implementation at this time.
+
+\item On July 3, 2021, a twenty-six page grievance was filed against the State Chair in the names of nine individuals [Exhibit AU]. Document metadata lists ``Harold Ickes'' in the ``Author'' field. A draft version [Exhibit AN] shows the same ``Author'' field, plus 6.8 hours of total editing time and 8 revisions.
+
+\item Document metadata lists ``Harold Ickes'' in the ``Author'' field of four AAC governance documents:
+\begin{itemize}[nosep]
+\item August 16, 2021 draft AAC agenda [Exhibit AQ]
+\item August 17, 2021 procedural rules for AAC meetings [Exhibit AR]
+\item September 11, 2021 Code of Conduct for the AAC [Exhibit AS]
+\item September 15, 2021 updated draft AAC agenda [Exhibit AT]
+\end{itemize}
+
+\item On August 29, 2021, AAC Co-Chair Mary Thorp emailed members stating ``I have asked the Bylaws Subcommittee to hold a special meeting to draft a Code of Conduct'' [Exhibit AX]. She gave members less than 48 hours to submit suggestions (deadline 3 PM on August 31, 2021).
+
+\item On August 30, 2021, Kim Felix responded calling this ``agenda setting''---``a tactic similar to filibustering where the entity that has the floor employs every measure possible to run out the clock in an effort to prevent others from fully participating'' [Exhibit AX].
+
+\item On September 9, 2021, Bylaws Subcommittee Co-Chair Cody Thompson reported on the August 31 meeting and stated ``I will send our draft code of conduct soon'' [Exhibit AY].
+
+\item On September 10, 2021, Grievant Claytor wrote: ``Here is my third request for this information. Please provide names of ALL attendees at the bylaws committee meeting... I would like the names of those who are not members that attended'' [Exhibit AY].
+
+\item Two days later, document metadata shows the Code of Conduct was created with ``Harold Ickes'' in the ``Author'' field [Exhibit AS]. Two people---Thorp and Thompson---represented the Code of Conduct as subcommittee work product. The metadata lists an RBC member as the author.
+
+\item The AAC was established to represent underrepresented caucus chairs. The agendas determined what business the committee would consider. The procedural rules governed how members could participate. The Code of Conduct established grounds for removing members. Document metadata lists an RBC member---not a member of any underrepresented group---in the ``Author'' field of each of these governance documents. The full scope of documents listing him as author is unknown.
+
+\item The Code of Conduct [Exhibit AS] contained provisions for removing members for ``actions that unduly hamper the work of the AAC.''
+
+\item The grievances bore the names of West Virginia Democrats. The AAC documents were presented as committee work product. Ickes did not disclose his connection to the documents.
+
+\item On September 22, 2021, the AAC Planning Subcommittee held a meeting. RBC Member Ickes attended. The meeting was recorded and transcribed [Exhibit A].
+
+\item The transcript records Ickes stating he told Vickers ``god knows how many times'' that ``at bottom you gotta out vote'' [Exhibit A].
+
+\item On September 23, 2021, Claytor documented the meeting in contemporaneous correspondence [Exhibit K].
+
+\item On September 26, 2021, Vickers confirmed Ickes' role [Exhibit AH], writing that ``He shared the experience in Alabama and that in the end, the votes were what mattered.''
+\end{enumerate}
+
+\textbf{D. Indigenous Caucus Dissolution}
+
+\begin{enumerate}[resume=body]
+\item On September 12, 2022, the Indigenous Caucus dissolved [Exhibit V].
+
+\item The dissolution resolution [Exhibit V] states the Affirmative Action Plan was drafted ``without any input by Black or Indigenous Members of the AAC.''
+
+\item The resolution states that AAC leaders ``invited Harold Ickes, an out-of-state white non-member, to participate in all planning and bylaws subcommittee meetings and sought advice on how to silence minorities upset with the process by weaponizing the rules of order'' [Exhibit V].
+
+\item On November 12, 2021, Sturm documented that the Affirmative Action Plan was drafted exclusively by white people due to the systematic exclusion of Black and Indigenous People of Color ("BIPOC") members from the drafting process [Exhibit J].
+
+\item The resolution names six party officials as responsible for the violations: Shane Assadzandi, Selina Vickers, Walt Auvil, Susan Miley, Gibbs Kinderman, and Mike Pushkin [Exhibit V].
+\end{enumerate}
+
+\textbf{E. The Pratte Process (August 2023--March 2024)}
+
+\begin{enumerate}[resume=body]
+\item On August 3, 2023, DNC official Clara Pratte offered mediation with Vice Chair Ken Martin [Exhibit N].
+
+\item On September 8, 2023, Pratte acknowledged that ``the matter in Alabama had also gone through its process in completion prior to DNC formal intervention'' [Exhibit O].
+
+\item No mediation occurred [Exhibit P].
+
+\item On December 6, 2023, Pratte introduced a two-thirds State Executive Committee vote requirement [Exhibit Q]. This requirement appears in no governing document.
+
+\item At the December 2023 SEC meeting [Exhibit R], Grievant Claytor's motion was ruled out of order on the grounds that no second appeal had been filed.
+
+\item State Chair Pushkin filed a motion to dismiss the 2023 grievance [Exhibit U].
+
+\item Grievant Sturm filed a second appeal. At the March 18, 2024 SEC hearing [Exhibit S], Sturm characterized the two-thirds requirement as unprecedented.
+
+\item Grievants completed the process and on March 28, 2024 filed a challenge with the RBC.
+\end{enumerate}
+
+\textbf{F. The June 28, 2024 Dismissal}
+
+\begin{enumerate}[resume=body]
+\item On June 28, 2024, the Co-Chairs dismissed the filing [Exhibit Z].
+
+\item The dismissal states the challenge ``does not allege a violation of the 2020 Memorandum of Understanding'' [Exhibit Z].
+
+\item The dismissal states the challenge ``does not allege a failure to... implement... an Affirmative Action Plan'' [Exhibit Z].
+
+\item The first paragraph of the attached Resolution [Exhibit V] states the plan was drafted ``without any input by Black or Indigenous Members.''
+
+\item The dismissal characterizes the challenge as ``the consequences of Mr. Sturm's own actions several years ago when he instigated the voluntary disbandment'' [Exhibit Z].
+\end{enumerate}
+
+\textbf{G. The Attendance Policy and May 2025 Removals}
+
+\begin{enumerate}[resume=body]
+\item On July 15, 2024, WVSDEC members Thornton Cooper and Richie Robb filed a grievance warning that the June 2024 Attendance Policy violated West Virginia Code \S\S~3-1-9, 3-1-10, and 3-1-11 [Exhibit X].
+
+\item The grievance cited the \textit{Cornelius} precedent [Exhibit W].
+
+\item On June 23, 2025, the Board of Appeals dismissed the Cooper \& Robb grievance for lack of standing [Exhibit Y].
+
+\item In May 2025, the party removed elected WVSDEC members under the Attendance Policy. Grievant Claytor was among those removed. Removal notices were dated May 16, 2025 [Exhibit L].
+
+\item State Chair Pushkin confirmed that removal was ``effective immediately upon issuance of the notice'' [Exhibit L].
+
+\item No pre-deprivation hearing occurred [Exhibit L].
+\end{enumerate}
+
+\textbf{H. The September 25, 2025 Board of Appeals Hearing}
+
+\begin{enumerate}[resume=body]
+\item On June 27, 2025, Claytor filed an appeal. On July 28, 2025, Claytor filed a formal grievance challenging the Attendance Policy under \textit{Cornelius} and state statute [Exhibit M].
+
+\item At the September 25, 2025 hearing [Exhibit E], the Board rejected Claytor's appeal but granted her a ``hardship waiver.''
+
+\item The Board did not address the substantive challenge to the policy's legality [Exhibit E].
+
+\item At the same hearing, the Board granted a ``hardship waiver'' to Stephanie Heck. Heck filed no appeal [Exhibit E].
+
+\item The phrase ``hardship waiver'' does not appear in the WVDP Bylaws.
+
+\item Eleven elected WVSDEC members remain removed [Exhibit E].
+\end{enumerate}
+
+\textbf{I. Continuing AAC Dysfunction}
+
+\begin{enumerate}[resume=body]
+\item The AAC has not met since May 2023 [Exhibit AA].
+
+\item In January--July 2025, Disability Caucus Parliamentarian John Doyle documented [Exhibit AA] that party leadership failed to respond to caucus inquiries, submitted resolutions were never addressed, and the Executive Director stated he ``thought several of [the caucuses] were defunct.''
+
+\item WVDP Bylaws Article IX, Section 3 requires the AAC to recommend individuals for At-Large WVSDEC positions.
+
+\item State Chair Pushkin confirmed [Exhibit AC] that AAC Co-Chairs hold authority to convene AAC meetings. Vickers holds this authority and has not convened a meeting since May 2023.
+
+\item On November 22, 2025, Doyle resigned [Exhibit AD], stating that he and others had ``planned to introduce a motion to dissolve the Caucus.''
+\end{enumerate}
+
+
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\countone}
+\phantomsection
+\label{count1}
+\textbf{\countone}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item Grievants re-allege and incorporate by reference all preceding paragraphs as if fully set forth herein.
+
+\textbf{Elements of Breach}
+
+\item The 2020 MOU is an enforceable contract [Exhibit T]. Challengers withdrew Credentials Committee challenges in exchange for the MOU's terms, and the RBC Co-Chairs signed it.
+
+\item MOU Section 2.B.c required that AAC members ``be selected by their particular caucus'' [Exhibit T].
+
+\item Kim Felix was named as Latino Caucus representative thirty-four days before the Latino Caucus was formed [Exhibit B], [Exhibit C].
+
+\item A constituency that has not yet organized cannot conduct a nomination as required by the MOU [Exhibit T].
+
+\item The Board of Appeals confirmed that ``the AAC did not follow the approved procedure to notice nominations and elections'' [Exhibit F].
+
+\textbf{Scripted Proceedings}
+
+\item The MOU Preamble required an ``open and transparent process'' [Exhibit T].
+
+\item The caucus-level scripts were marked as ``internal documents'' not to be shared [Exhibit AF].
+
+\item The script distributed to the Black Caucus urged that no amendments be made to maintain ``unity among the 6 caucuses'' [Exhibit AI].
+
+\item Vickers distributed strategic coaching documents instructing caucus chairs to ``make a motion to seat them knowing that it will be voted down'' in order to ``force an explanation from Biafore'' [Exhibit AJ].
+
+\textbf{RBC Supervisory Failure}
+
+\item The MOU assigned the RBC supervisory authority over implementation [Exhibit T].
+
+\item A supervisor whose member is listed as the author of filings and governance documents used by one faction, without disclosure in the filing itself, cannot credibly function as a neutral supervisor.
+
+\item Document metadata lists RBC member Ickes as the author of grievances filed against the State Chair while the RBC supervised [Exhibit AP], [Exhibit AU].
+
+\item Document metadata lists RBC member Ickes as the author of the AAC's procedural rules and Code of Conduct while the RBC supervised [Exhibit AR], [Exhibit AS].
+
+\item RBC member Ickes stated on the record that he advised Vickers ``god knows how many times'' to ``outvote'' minority caucus leaders [Exhibit A].
+
+\item Ickes did not disclose his connection to the documents.
+
+\item The RBC's supervision was compromised from within.
+
+\item The RBC did not exercise its supervisory authority to remedy the violations the Board of Appeals confirmed [Exhibit F].
+
+\item In Alabama, the RBC appointed an Independent Hearing Officer to address comparable state party governance violations [Exhibit AV]. The RBC possesses authority to do the same in West Virginia.
+
+\textbf{Claim for Relief}
+
+\item Accordingly, Respondents breached the 2020 Memorandum of Understanding by: (a) designating At-Large WVSDEC seats to representatives for constituencies that had not yet organized to conduct their own nominations as required by Section 2.B.c; and (b) conducting scripted proceedings marked ``internal'' in violation of the MOU Preamble's ``open and transparent process'' requirement.
+
+\item The RBC failed to exercise its supervisory authority to remedy these breaches.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\counttwo}
+\phantomsection
+\label{count2}
+\textbf{\counttwo}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item Grievants re-allege and incorporate by reference all preceding paragraphs as if fully set forth herein.
+
+\textbf{The Property Interest}
+
+\item West Virginia Code \S~3-1-9 establishes that voters elect State Executive Committee members to four-year terms. An elected position on the WVSDEC constitutes a property interest [Exhibit W].
+
+\textbf{The Bylaw Procedure}
+
+\item WVDP Bylaws Article V, Section 3(a) provides that members who fail to meet attendance requirements ``are removed from membership immediately'' and ``may make an appeal to the Board of Appeals within 30 days.'' Removal occurs first; appeal occurs after. No pre-deprivation hearing is provided.
+
+\textbf{The Procedural History}
+
+\item On July 15, 2024, WVSDEC members Cooper and Robb filed a pre-enforcement grievance challenging the Attendance Policy [Exhibit X]. The Board dismissed for lack of standing [Exhibit Y]: ``Neither grievant was removed from the WVSDEC. No direct harm or loss of rights was demonstrated.''
+
+\item On May 16, 2025, elected WVSDEC members---including Grievant Claytor---were removed under the Attendance Policy without pre-deprivation hearings [Exhibit L].
+
+\item Grievant Claytor filed an appeal and formal grievance [Exhibit M] challenging the policy under \textit{Cornelius} and state statute. At the September 25, 2025 hearing [Exhibit E], the Board rejected Claytor's appeal as filed ``approximately an hour after midnight'' on the deadline, without addressing the substantive challenge to the policy's legality.
+
+\item Pre-enforcement challenges were dismissed for lack of standing [Exhibit Y]. Post-enforcement challenges were rejected as untimely [Exhibit E]. The Board's approach created a no-review zone: pre-enforcement challenges were dismissed because harm had not yet occurred, while post-enforcement challenges were rejected because the deadline had passed. The legality of the Attendance Policy under West Virginia Code \S~3-1-9 and \textit{Cornelius} has never been adjudicated on its merits. This is why RBC intervention is necessary.
+
+\textbf{Claim for Relief}
+
+\item Accordingly, Respondents denied Grievants due process by removing elected members without pre-deprivation hearings, dismissing pre-enforcement challenges for lack of standing, and rejecting post-enforcement challenges as untimely.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\countthree}
+\phantomsection
+\label{count3}
+\textbf{\countthree}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item Grievants re-allege and incorporate by reference all preceding paragraphs as if fully set forth herein.
+
+\textbf{The Statutory Framework}
+
+\item West Virginia Code \S~3-1-9 vests authority to elect State Executive Committee members in voters and establishes four-year terms.
+
+\item West Virginia Code \S~3-1-9(f) assigns vacancy-filling authority to county executive committees for members elected from senatorial districts.
+
+\item In \textit{State ex rel. Cornelius v. Warner}, the Kanawha County Circuit Court held that duly elected party executive committee members cannot be removed from office without due process because their entitlement to hold office for the term prescribed by the Legislature creates a property right interest [Exhibit W]. No West Virginia statute authorizes a state party Board of Appeals to remove elected members.
+
+\textbf{The Statutory Conflict}
+
+\item On May 16, 2025, elected WVSDEC members were removed under the Attendance Policy [Exhibit L]. The Board of Appeals subsequently granted ``hardship waivers'' restoring some removed members [Exhibit E].
+
+\item The words ``waiver'' and ``hardship waiver'' appear in no WVDP Bylaws provision, and no bylaw or statute authorizes the Board to restore removed members.
+
+\item If removal created a vacancy, West Virginia Code \S~3-1-9(f) assigns filling authority to the county executive committee.
+
+\item The Board of Appeals granted waivers restoring membership [Exhibit E].
+
+\item If removal did not create a vacancy, no bylaw or statute authorizes the Board's removal or restoration actions.
+
+\textbf{Claim for Relief}
+
+\item Accordingly, Respondents violated West Virginia Code \S~3-1-9 by removing elected members through a mechanism not authorized by statute and by exercising vacancy-filling authority the statute assigns to county executive committees.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\countfour}
+\phantomsection
+\label{count4}
+\textbf{\countfour}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item Grievants re-allege and incorporate by reference all preceding paragraphs as if fully set forth herein.
+
+\textbf{The Comparator}
+
+\item The West Virginia AAC structure was modeled on Alabama. Vickers distributed Alabama bylaws stating ``the procedures for the caucuses are built into the Alabama Bylaws'' [Exhibit AF], and Baker's draft Affirmative Action Plan was copied directly from Alabama's [Exhibit AG].
+
+\item The same RBC member, Harold Ickes, participated in both states' AAC processes. In West Virginia, Ickes stated he advised Vickers ``god knows how many times'' to ``outvote'' minority caucus leaders. Vickers confirmed Ickes ``shared the experience in Alabama'' [Exhibit AH].
+
+\textbf{The Disparity}
+
+\item In Alabama, the RBC appointed an Independent Hearing Officer to investigate and remedy governance violations [Exhibit AV].
+
+\item In West Virginia, Grievants exhausted the Board of Appeals process in November 2021 and the State Executive Committee process in March 2024. On June 28, 2024, the RBC summarily dismissed.
+
+\item The RBC member who advised Vickers to ``outvote'' minority caucus leaders is a member of the body that dismissed the challenge. The DNC Charter provides no neutral body to review conduct by RBC members.
+
+\textbf{Uniform Standards Requirement}
+
+\item The DNC, as the parent body with supervisory authority over state parties, cannot treat identical violations differently across states and maintain its role as a neutral arbiter. State parties similarly situated with respect to delegate selection and affirmative action structures should receive comparable process and remedies.
+
+\item The Alabama Democratic Party and the West Virginia Democratic Party implemented substantially similar affirmative action and caucus structures under the RBC's supervision and with the involvement of the same RBC member, Harold Ickes [Exhibit AF], [Exhibit AG], [Exhibit AH].
+
+\item Alabama and West Virginia received different treatment under the same RBC enforcement authority [Exhibit AV], [Exhibit Z].
+
+\item The RBC employed the Independent Hearing Officer mechanism in Alabama [Exhibit AV] but not in West Virginia [Exhibit Z].
+
+\textbf{Claim for Relief}
+
+\item The RBC appointed an Independent Hearing Officer in Alabama [Exhibit AV].
+
+\item The RBC dismissed in West Virginia [Exhibit Z].
+
+\item Both states implemented the same template with involvement from the same RBC member [Exhibit AF], [Exhibit AG], [Exhibit AH].
+
+\item In West Virginia, document metadata lists that RBC member as the author of grievances and committee rules filed for one faction [Exhibit AP], [Exhibit AU], [Exhibit AR], [Exhibit AS].
+
+\item The RBC cannot adjudicate challenges to documents listing one of its members as the author.
+
+\item Accordingly, the RBC's decision to provide Alabama an Independent Hearing Officer while dismissing West Virginia's challenge, despite the added conflict of interest in West Virginia, constitutes disparate and arbitrary enforcement of its own standards.
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{FIFTH CAUSE OF ACTION: UNDISCLOSED COORDINATION AND STRUCTURAL CONFLICT}
+\phantomsection
+\label{count5}
+\textbf{FIFTH CAUSE OF ACTION: UNDISCLOSED COORDINATION AND STRUCTURAL CONFLICT}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item Grievants re-allege and incorporate by reference all preceding paragraphs as if fully set forth herein.
+
+\textbf{The Contractual Right}
+
+\item The MOU is a contract [Exhibit T].
+
+\item Grievants are third-party beneficiaries of that contract.
+
+\item The MOU guaranteed minority Democrats the right to participate in an open and transparent AAC formation process [Exhibit T].
+
+\item The MOU guaranteed that AAC members would be selected by their particular caucus [Exhibit T].
+
+\item The MOU assigned the RBC supervisory responsibility to ensure these rights were protected [Exhibit T].
+
+\textbf{Undisclosed Document Authorship and Coordination}
+
+\item Document metadata lists ``Harold Ickes'' in the ``Author'' field of seven documents filed between November 2020 and September 2021.
+
+\item The grievances were filed in other people's names.
+
+\item The November 22, 2020 grievance was filed in Vickers' name. Metadata lists ``Harold Ickes'' in the ``Author'' field [Exhibit AP].
+
+\item The July 3, 2021 grievance was filed in the names of nine individuals: Rep. Cody Thompson, Kim Felix, Kelly Elkins, Jean Evansmore, Kristin Loken, Jennifer Wells, Emily Clifford, Kathy Ferguson, and Loretta Young. Metadata lists ``Harold Ickes'' in the ``Author'' field [Exhibit AU]. Nine people signed a document listing an RBC member as the author.
+
+\item The draft version [Exhibit AN] shows the same ``Author'' field, plus 6.8 hours of total editing time and 8 revisions.
+
+\item Document metadata lists ``Harold Ickes'' in the ``Author'' field of four AAC governance documents:
+\begin{itemize}[nosep]
+\item August 16, 2021 draft agenda [Exhibit AQ]---determined what business the AAC would consider
+\item August 17, 2021 procedural rules [Exhibit AR]---governed how members could participate
+\item September 11, 2021 Code of Conduct [Exhibit AS]---established grounds for removing members
+\item September 15, 2021 updated agenda [Exhibit AT]
+\end{itemize}
+
+\item The AAC was established to represent underrepresented caucus chairs. The governance documents identified above---which controlled what business the committee considered, how members could participate, and how members could be removed---each list an out-of-state, non-member RBC official in the ``Author'' field. The full scope of documents listing him as author is unknown.
+
+\item These documents were created while his committee supervised the MOU.
+
+\item This was not disclosed on the face of the filings.
+
+\item The filings bore the names of local members; recipients had no basis to know an RBC member was listed as the author in the metadata.
+
+\item The metadata evidence is corroborated by non-metadata evidence: the recorded statement where Ickes describes advising Vickers ``god knows how many times'' to ``outvote'' minority leaders [Exhibit A]; Vickers' email confirming Ickes ``shared the experience in Alabama'' [Exhibit AH]; the distribution of Alabama templates [Exhibit AF], [Exhibit AG]; and the pattern of identical structures across both states. Even if Respondents contend the ``Author'' field could reflect a template or editing environment, the documents were circulated and relied upon as local work product while their embedded properties listed an RBC member, and contemporaneous communications and recorded statements show his direct strategic involvement.
+
+\item Vickers circulated and relied upon documents whose metadata lists Ickes as author, including the grievances ([Exhibit AP], [Exhibit AU]) and committee rules ([Exhibit AR], [Exhibit AS]). She distributed Alabama bylaws as a template [Exhibit AF], implemented the scripts and Code of Conduct, and framed the effort strategically [Exhibit AK].
+
+\item Vickers distributed scripts marked as internal documents.
+
+\item Vickers instructed caucus chairs to suppress amendments.
+
+\item Vickers scripted her own nomination.
+
+\item Vickers received the Code of Conduct listing Ickes in the ``Author'' field.
+
+\item That Code of Conduct was used against Grievant Sturm and other minority caucus leaders who questioned the process.
+
+\textbf{The Pattern}
+
+\item In Alabama, the RBC appointed an Independent Hearing Officer to address AAC governance violations [Exhibit AV].
+
+\item In West Virginia, the RBC dismissed a challenge to AAC governance violations [Exhibit Z].
+
+\item The same RBC member was involved in both states [Exhibit AH].
+
+\item In West Virginia, document metadata lists that RBC member as the author of grievances and committee rules filed for one faction [Exhibit AP], [Exhibit AU], [Exhibit AR], [Exhibit AS].
+
+\textbf{Pattern of Exclusion}
+
+\item BIPOC members were systematically excluded from AAC subcommittees. At the August 17, 2021 AAC meeting, members who volunteered for subcommittees were told positions were already filled [Exhibit D].
+
+\item Claytor documented that she did not receive access to the Bylaws Committee [Exhibit G], that speaking restrictions were applied to her while white non-members spoke without restriction [Exhibit H], and observations regarding the conduct of certain members [Exhibit I].
+
+\item Black Caucus meeting agendas allocated time for Vickers to update members on credentials work [Exhibit AM]. Vickers was not a member of the Black Caucus. A diversity caucus platform was used to advance a factional campaign whose coordination with an RBC member was not disclosed.
+
+\textbf{The Continuing Harm}
+
+\item The Indigenous Caucus dissolved in 2022 [Exhibit V].
+
+\item The dissolution resolution states that AAC leaders ``sought advice on how to silence minorities upset with the process'' [Exhibit V].
+
+\item The Disability Caucus has considered dissolution [Exhibit AD].
+
+\item The AAC has not met since May 2023 [Exhibit AA].
+
+\item Vickers is now Female Co-Chair of the AAC and a DNC representative [Exhibit AB].
+
+\item She gained these positions through the process an RBC member controlled without disclosure.
+
+\item She holds authority to convene AAC meetings [Exhibit AC]. She has not convened a meeting since May 2023.
+
+\item While the AAC remains dormant, the party removed elected State Executive Committee members in May 2025 [Exhibit L].
+
+\item The body created to protect minority representation cannot function because the people who control it gained their positions through procedures that violated notice requirements.
+
+\item The injury is ongoing.
+
+\textbf{Abandoned Mediation}
+
+\item DNC official Clara Pratte offered mediation with Vice Chair Ken Martin in August 2023 [Exhibit N].
+
+\item No mediation occurred [Exhibit P].
+
+\item The current DNC Chair is Ken Martin.
+
+\item He did not fulfill the mediation his office offered.
+
+\textbf{Claim for Relief}
+
+\item Document metadata lists an RBC member as the author of filings and governance documents used by one faction while his committee claimed to provide neutral supervision of the MOU.
+
+\item Document metadata lists him as the author of legal documents filed under other people's names.
+
+\item Document metadata lists him as the author of the committee rules and Code of Conduct used against Grievants and other minority caucus leaders.
+
+\item This was not disclosed.
+
+\item A supervisory body cannot fulfill its function when document metadata lists one of its members as the author of documents filed for a party to the supervised agreement without disclosure.
+
+\item The RBC's supervision of the MOU was structurally compromised.
+
+\item The RBC cannot provide neutral adjudication of challenges to documents listing one of its members as the author.
+
+\item An Independent Hearing Officer must be appointed.
+
+\item Where material facts are disputed or the challenged process implicates notice, due process, transparency, or impartiality, this Committee has appointed an Independent Hearing Officer to establish a record and recommend binding remedies. In Alabama, the IHO found ``lack of notice,'' ``lack of due process,'' and ``lack of transparency'' warranted invalidating challenged proceedings [Exhibit AV]. The same conditions exist here.
+
+\item The conduct of RBC member Harold Ickes must be referred to the appropriate DNC body for investigation.
+
+\item The individuals who participated in this conduct must be removed from party office.
+
+\end{enumerate}
+
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\prayername}
+\phantomsection
+\label{prayer}
+\textbf{\prayername}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item WHEREFORE, Grievants respectfully request that the Committee grant the following relief, to the extent within this Committee's authority:
+
+\item \textbf{A. Declaratory Relief}
+    \begin{enumerate}[label=\roman*., nosep]
+    \item Declare the June 2, 2021 AAC formation void \textit{ab initio} as conducted in violation of MOU \S~2.B.c;
+    \item Declare the Attendance Policy and May 2025 removals violative of due process under the DNC Charter and West Virginia law.
+    \end{enumerate}
+
+\item \textbf{B. Injunctive Relief}
+    \begin{enumerate}[label=\roman*., nosep]
+    \item Order the immediate reinstatement of all WVSDEC members removed under the Attendance Policy pending IHO determination. Interim reinstatement preserves the status quo and prevents irreparable harm to minority representation while a neutral fact-finder establishes a record;
+    \item Enjoin Harold Ickes from participation in any deliberation regarding this challenge;
+    \item Require recusal of RBC Co-Chair James Roosevelt Jr. from any deliberation regarding this challenge, as signatory to the June 28, 2024 dismissal.
+    \end{enumerate}
+
+\item \textbf{C. Equitable Relief}
+    \begin{enumerate}[label=\roman*., nosep]
+    \item Appoint an Independent Hearing Officer with authority to:
+        \begin{enumerate}[label=\alph*., nosep]
+        \item Investigate the DNC's and WVDP's violations of Grievants' rights as alleged herein;
+        \item Investigate RBC member conduct in connection with the documents listing him as author without disclosure;
+        \item Establish a factual record through testimony and document production;
+        \item Issue binding Findings of Fact and Conclusions; and
+        \item Recommend comprehensive remedies.
+        \end{enumerate}
+    \item Order new AAC elections under RBC supervision with verified membership lists and no participation fees.
+    \end{enumerate}
+
+\item \textbf{D. Referrals and Recommendations}
+    \begin{enumerate}[label=\roman*., nosep]
+    \item Refer the matter of RBC member conduct to the appropriate DNC body for investigation;
+    \item Recommend to DNC Officers that party-building funds to the WVDP be suspended until compliance is certified;
+    \item Recommend to the appropriate body removal from party office of any individual who participated in the undisclosed conduct documented herein.
+    \end{enumerate}
+
+\item \textbf{E. Further Relief}
+    \begin{enumerate}[label=\roman*., nosep]
+    \item Grant such other and further relief as the Committee deems just and proper.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\hearingname}
+\phantomsection
+\label{hearing}
+\textbf{\hearingname}
+\end{center}
+
+Grievants demand a hearing before the Rules and Bylaws Committee or its designated Independent Hearing Officer on all issues of fact and law raised herein.
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\reservationname}
+\phantomsection
+\label{reservation}
+\textbf{\reservationname}
+\end{center}
+
+\textbf{Exhaustion of Internal Remedies}
+
+\begin{enumerate}[resume=body]
+\item Grievants have exhausted every process identified by DNC officials, including a two-thirds State Executive Committee vote requirement not found in governing documents.
+
+\item On June 28, 2024, the RBC dismissed the challenge [Exhibit Z] This dismissal constitutes final action within the DNC structure.
+
+\textbf{Structural Limitations on Internal Review}
+
+\item The DNC Charter provides no neutral body to review conduct by RBC members.
+
+\item The Ombudsman Subcommittee designated for officer violations is composed of RBC Co-Chairs and Regional Caucus Chairs.
+
+\item This challenge documents conduct by RBC member Harold Ickes
+
+\item The June 28, 2024 dismissal was signed by RBC Co-Chairs.
+
+\item An RBC member whose conduct is documented in the challenge participated in the structure that dismissed the challenge.
+
+\textbf{Preservation of All Claims}
+
+\item Under the 2008 Michigan/Florida precedent, the Credentials Committee reversed RBC delegate penalties.
+
+\item Grievants preserve all rights to seek Credentials Committee review.
+
+\item The WVSDEC selects West Virginia's delegates to the Democratic National Convention.
+
+\item Grievants preserve all rights under parliamentary procedure pursuant to DNC Charter Article 9.
+
+\item Grievants preserve all claims arising from violation of the 2020 MOU.
+
+\item Grievants preserve all claims arising from RBC supervisory failure.
+
+\item Grievants preserve all claims under West Virginia Code \S~3-1-9.
+
+\item Grievants preserve all claims for declaratory and injunctive relief.
+
+\item Grievants preserve all rights to seek alternative remedies if internal remedies are unavailable or ineffective.
+
+\textbf{Notice}
+
+\item This filing constitutes notice to all parties that Grievants have documented all claims to standards sufficient for judicial review.
+
+\textbf{Non-Waiver}
+
+\item Nothing in this challenge, or in Grievants' decision to invoke the RBC's processes, shall be construed as a waiver of any rights, remedies, or claims available to Grievants under applicable federal, state, or party law in any forum of competent jurisdiction.
+\end{enumerate}
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{\verificationname}
+\phantomsection
+\label{verification}
+\textbf{\verificationname}
+\end{center}
+
+\vspace{5mm}
+
+\textbf{Declaration of Seth Sturm}
+
+\vspace{5mm}
+
+I, Seth Sturm, declare under penalty of perjury that:
+
+\begin{enumerate}[label=\arabic*., nosep, leftmargin=0.5in]
+\item I am a Grievant in this matter and am competent to testify to the facts stated herein.
+\item I have read the foregoing Verified Formal Challenge.
+\item The factual contentions have evidentiary support in the documentary exhibits attached hereto.
+\item Exhibits C (June 2, 2021 Script), AI (Black Caucus Script), and AK (Vickers Strategic Framing Email) are screenshots I captured contemporaneously in 2021 when I received or accessed these documents. These screenshots are true and accurate representations of the documents as they appeared at that time and have not been altered or edited from their original format. To my knowledge, the original documents remain in the possession of Selina Vickers.
+\item For exhibits consisting of metadata reports, I generated those reports using ExifTool from the underlying electronic files in my possession. The reports reflect the embedded document-property fields present at the time of extraction.
+\item The facts stated herein are true and correct to the best of my knowledge, information, and belief, formed after reasonable inquiry.
+\item This filing is not being presented for any improper purpose, such as to harass, cause unnecessary delay, or needlessly increase the cost of litigation.
+\item The claims and legal contentions are warranted by existing law or by a nonfrivolous argument for extending, modifying, or reversing existing law or for establishing new law.
+\item I have not knowingly made any false statement of material fact or frivolously asserted any claim herein.
+\end{enumerate}
+
+\vspace{15mm}
+
+\begin{singlespace*}
+Executed on: December 12, 2025
+
+\vspace{12mm}
+
+\makebox[3in]{\hrulefill}\\
+Seth Sturm\\
+Grievant, Pro Se
+\end{singlespace*}
+
+\vspace{20mm}
+
+\textbf{Declaration of Mary Ann Claytor}
+
+\vspace{5mm}
+
+I, Mary Ann Claytor, declare under penalty of perjury that:
+
+\begin{enumerate}[label=\arabic*., nosep, leftmargin=0.5in]
+\item I am a Grievant in this matter and am competent to testify to the facts stated herein.
+\item I have read the foregoing Verified Formal Challenge.
+\item The factual contentions have evidentiary support in the documentary exhibits attached hereto.
+\item The facts stated herein are true and correct to the best of my knowledge, information, and belief, formed after reasonable inquiry.
+\item This filing is not being presented for any improper purpose, such as to harass, cause unnecessary delay, or needlessly increase the cost of litigation.
+\item The claims and legal contentions are warranted by existing law or by a nonfrivolous argument for extending, modifying, or reversing existing law or for establishing new law.
+\item I have not knowingly made any false statement of material fact or frivolously asserted any claim herein.
+\end{enumerate}
+
+\vspace{15mm}
+
+\begin{singlespace*}
+Executed on: December 12, 2025
+
+\vspace{15mm}
+
+\makebox[3in]{\hrulefill}\\
+Mary Ann Claytor\\
+Grievant
+\end{singlespace*}
+
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{SUPPORTING SIGNATORIES}
+\phantomsection
+\label{supporting}
+\textbf{SUPPORTING SIGNATORIES}
+\end{center}
+
+\begin{enumerate}[resume=body]
+\item The undersigned individuals certify that they are registered Democrats or Democratic Party participants residing in West Virginia and that they have a direct interest in the governance and compliance issues described in this challenge. They join in requesting that the Rules and Bylaws Committee provide neutral and effective internal remedies.
+\end{enumerate}
+
+\vspace{25mm}
+
+\newcommand{\sigblock}{%
+    \begin{minipage}[t]{\linewidth}
+    \begin{singlespace*}
+    \underline{\hspace*{65mm}}\\[2mm]
+    \textbf{Affirmed by E-Signature}\\[1mm]
+    \textit{West Virginia Democrat}
+    \end{singlespace*}
+    \end{minipage}
+}
+
+\noindent
+\begin{longtable}{p{2.9in} p{0.2in} p{2.9in}}
+
+\endfirsthead
+\multicolumn{3}{c}{} \\[2.5cm]
+\endhead
+
+\sigblock & & \sigblock \\[4.0cm]
+
+\sigblock & & \sigblock \\[4.0cm]
+
+\sigblock & & \sigblock \\[4.0cm]
+
+\sigblock & & \sigblock \\[4.0cm]
+
+\sigblock & & \sigblock \\[4.0cm]
+
+\sigblock & & \sigblock \\[4.0cm]
+
+\sigblock & & \\[4.0cm]
+
+\end{longtable}
+
+
+\newpage
+\begin{center}
+\bookmark[page=\thepage]{CERTIFICATE OF SERVICE}
+\phantomsection
+\label{service}
+\textbf{CERTIFICATE OF SERVICE}
+\end{center}
+
+I certify that a true and correct copy of the foregoing \textit{Verified Formal Challenge} and all attached exhibits was served via electronic mail, with delivery confirmation requested, on this 12th day of December, 2025, upon:
+
+\vspace{8mm}
+
+\begin{singlespace}
+\textbf{Rules and Bylaws Committee of the Democratic National Committee}\\
+via DNC Office of Party Affairs\\
+\texttt{partyaffairs@dnc.org}
+
+\vspace{5mm}
+
+\textbf{West Virginia Democratic Party}\\
+\textbf{West Virginia State Democratic Executive Committee}\\
+via State Chair Mike Pushkin\\
+\texttt{mike@wvdemocrats.com}
+\end{singlespace}
+
+\vspace{15mm}
+\begin{singlespace*}
+\makebox[3in]{\hrulefill}\\
+Seth Sturm, Grievant
+\end{singlespace*}
+
+
+\section*{EXHIBIT LIST}
+
+\begin{description}
+    \item[{[Exhibit A]}] \textbf{September 22, 2021 Video/Transcript (Ickes)} \\
+    Video/Transcript of RBC Member Harold Ickes describing the Alabama intervention and advising ``outvoting'' minority leaders in West Virginia.
+
+    \item[{[Exhibit B]}] \textbf{June 2, 2021 AAC Meeting Transcript} \\
+    Transcript documenting the nomination of a Latino Caucus representative prior to the caucus's official formation date.
+
+    \item[{[Exhibit C]}] \textbf{June 2, 2021 Script} \\
+    Pre-written script distributed by Selina Vickers containing nominations and verbatim language for delivery.
+
+    \item[{[Exhibit D]}] \textbf{August 17, 2021 AAC Meeting Transcript} \\
+    Transcript of AAC meeting where members who volunteered for subcommittees were told positions were already filled.
+
+    \item[{[Exhibit E]}] \textbf{September 25, 2025 BOA Hearing Video/Transcript} \\
+    Video/Transcript evidence of the Board utilizing ``appeal'' and ``waiver'' processes that appear in no governing document to make membership decisions affecting elected positions that state law assigns to voters and to the committee.
+
+    \item[{[Exhibit F]}] \textbf{WVDP Board of Appeals Resolution (November 29, 2021)} \\
+    Board finding that ``the AAC did not follow the approved procedure to notice nominations and elections''.
+
+    \item[{[Exhibit G]}] \textbf{Mary Ann Claytor Email (September 1, 2021)} \\
+    Documentation that Claytor did not receive Zoom information for the Bylaws Committee.
+
+    \item[{[Exhibit H]}] \textbf{Mary Ann Claytor Email (September 20, 2021)} \\
+    Documentation of speaking restriction applied to Black Caucus Chair while white non-member spoke without restriction.
+
+    \item[{[Exhibit I]}] \textbf{Email Chain on AAC Agenda and Presiding Officer (September 15, 2021)} \\
+    Correspondence documenting Claytor's observations regarding conduct of certain members.
+
+    \item[{[Exhibit J]}] \textbf{Sturm-Bush Correspondence (November 12, 2021)} \\
+    Statement that the Affirmative Action Plan was drafted by all white people due to absence of BIPOC members from the drafting process.
+
+    \item[{[Exhibit K]}] \textbf{Mary Ann Claytor Email (September 23, 2021)} \\
+    Contemporaneous correspondence written the day after the September 22 meeting, documenting Claytor's account of Ickes's ``outvote'' statement and the meeting structure that restricted BIPOC participation.
+
+    \item[{[Exhibit L]}] \textbf{State Chair Pushkin Correspondence (May 30, 2025)} \\
+    Email from State Chair Mike Pushkin confirming Claytor's removal was ``effective immediately upon issuance of the notice'' dated May 16, 2025, with appeal rights available only after removal---not before.
+
+    \item[{[Exhibit M]}] \textbf{Mary Ann Claytor Formal Grievance (July 28, 2025)} \\
+    Formal grievance challenging Attendance Policy under state statute.
+
+    \item[{[Exhibit N]}] \textbf{DNC Official Clara Pratte Correspondence---Mediation Offer (August 2023)} \\
+    Correspondence documenting Pratte's offer of mediation with Vice Chair Ken Martin and confirmation that ``all parties have remained committed to meeting.''
+
+    \item[{[Exhibit O]}] \textbf{DNC Official Clara Pratte Correspondence---Alabama Distinction (September 2023)} \\
+    Correspondence in which Pratte distinguishes Alabama from West Virginia, stating Alabama ``had also gone through its process in completion prior to DNC formal intervention.'' This correspondence occurred one month after Pratte offered mediation with Vice Chair Ken Martin.
+
+    \item[{[Exhibit P]}] \textbf{DNC Official Clara Pratte Correspondence---Mediation Abandoned (October 2023)} \\
+    Correspondence documenting 41 days of silence following mediation offer. Pratte did not address the promised mediation. Claytor responded: ``We've already navigated the appeals process.''
+
+    \item[{[Exhibit Q]}] \textbf{DNC Official Clara Pratte Correspondence---Second Appeal Requirement (December 2023)} \\
+    Correspondence in which Pratte introduces a two-thirds State Executive Committee vote requirement not found in any governing document and not mentioned in prior communications.
+
+    \item[{[Exhibit R]}] \textbf{December 2023 SEC Meeting Transcript} \\
+    State Executive Committee meeting at which Grievant Claytor's motion to overturn the Board of Appeals decision was ruled out of order on the grounds that no second appeal had been filed.
+
+    \item[{[Exhibit S]}] \textbf{March 18, 2024 SEC Hearing Transcript} \\
+    State Executive Committee hearing on Grievant Sturm's second appeal. Contains Sturm's undisputed characterization of the requirement as ``unprecedented'' and ``fabricated.''
+
+    \item[{[Exhibit T]}] \textbf{2020 Memorandum of Understanding} \\
+    WVDP-DNC governing document establishing AAC formation requirements and RBC supervision.
+
+    \item[{[Exhibit U]}] \textbf{WVDP Motion to Dismiss (2023)} \\
+    State Chair Pushkin's motion responding to 2023 grievance.
+
+    \item[{[Exhibit V]}] \textbf{Indigenous Caucus Resolution of Dissolution} \\
+    Resolution naming six party officials as responsible for conditions causing dissolution.
+
+    \item[{[Exhibit W]}] \textbf{\textit{State ex rel. Cornelius v. Warner} Decision (2022)} \\
+    2022 Kanawha County Circuit Court decision establishing due process protections for elected committee members.
+
+    \item[{[Exhibit X]}] \textbf{Cooper \& Robb Appeal (July 15, 2024)} \\
+    Appeal warning that Attendance Policy violates state statute and \textit{Cornelius}.
+
+    \item[{[Exhibit Y]}] \textbf{Board of Appeals Written Opinion---Cooper \& Robb Dismissal (June 23, 2025)} \\
+    Dismissal of pre-enforcement challenge for lack of standing.
+
+    \item[{[Exhibit Z]}] \textbf{June 28, 2024 RBC Rejection Letter} \\
+    RBC dismissal letter declining jurisdiction on the specific grounds that the challenge ``does not... allege a violation of the 2020 Memorandum of Understanding.''
+
+    \item[{[Exhibit AA]}] \textbf{Disability Caucus Correspondence (January-July 2025)} \\
+    Correspondence documenting broader pattern of caucus marginalization, Executive Director's statement that caucuses were ``defunct,'' and Disability Caucus considering dissolution due to party unresponsiveness.
+
+    \item[{[Exhibit AB]}] \textbf{AAC Election Ballot (June 15, 2022)} \\
+    Election results documenting Vickers elected Female Co-Chair after Board confirmed her prior election violated procedures.
+
+    \item[{[Exhibit AC]}] \textbf{Disability Caucus Correspondence (June 19, 2025)} \\
+    Correspondence documenting State Chair Pushkin's confirmation that AAC Co-Chairs hold authority to convene AAC meetings.
+
+    \item[{[Exhibit AD]}] \textbf{Disability Caucus Resignation (November 22, 2025)} \\
+    Resignation from Disability Caucus Parliamentarian citing consideration of a motion to dissolve the Caucus.
+
+    \item[{[Exhibit AE]}] \textbf{Vickers Website (Wayback Machine, June 24, 2021)} \\
+    Archived webpage documenting May 13, 2021 ``Know Your Rights'' training with Harold Ickes and caucus registration link.
+
+    \item[{[Exhibit AF]}] \textbf{Vickers Emails---Script Authorship and Alabama Template (May 31--June 1, 2021)} \\
+    Email chain in which Vickers (1) states she drafted the script (``I put together... a separate agenda with a script built in''), (2) instructs recipients to keep it secret (``The script should be considered an `internal' document and should not be shared with anyone other than your co-chair''), (3) instructs recipients to ``Push for a vote and no amendments,'' and (4) distributes Alabama Democratic Party Bylaws stating ``The procedures for the caucuses are built into the Alabama Bylaws.''
+
+    \item[{[Exhibit AG]}] \textbf{Robert Baker Email---Alabama Template (August 20, 2021)} \\
+    Email from Robert Baker stating ``I took the liberty of taking the Alabama Affirmative Action plan and changing it to replace Alabama with West Virginia.''
+
+    \item[{[Exhibit AH]}] \textbf{Vickers Email---Ickes Alabama Expertise (September 26, 2021)} \\
+    Email from Vickers confirming Ickes was invited ``to provide information and answer questions'' and that ``He shared the experience in Alabama and that in the end, the votes were what mattered.''
+
+    \item[{[Exhibit AI]}] \textbf{Black Caucus Script (June 1, 2021)} \\
+    Contemporaneous screenshot captured by Grievant Sturm of script distributed by Vickers for the June 1, 2021 Black Caucus meeting. Contains instruction to ``strongly urge that... no amendments to the resolution be made.''
+
+    \item[{[Exhibit AJ]}] \textbf{Vickers Strategic Coaching---Issues for Executive Committee (June 3, 2021)} \\
+    Document distributed to caucus chairs containing instruction to ``make a motion... knowing that it will be voted down'' to ``force an explanation from Biafore.''
+
+    \item[{[Exhibit AK]}] \textbf{Vickers Strategic Framing Email (June 1, 2021)} \\
+    Email from Vickers to caucus chairs stating ``She's scared. Friends, she is losing control and she knows it and is grasping at straws'' and ``It is not your problem that she has not done her job for the last 6 years.''
+
+    \item[{[Exhibit AL]}] \textbf{Resolution of Diversity Caucuses with Metadata Report (June 1, 2021)} \\
+    Resolution passed by all six caucuses on June 1, 2021. Metadata report generated using ExifTool lists creation date of May 31, 2021 at 9:42:35 PM. The resolution was created the night before the caucus meetings at which it was adopted.
+
+    \item[{[Exhibit AM]}] \textbf{Black Caucus Agenda (June 15, 2021)} \\
+    Meeting agenda allocating two items to Vickers' Credentials Committee work. Vickers was not a member of the Black Caucus.
+
+    \item[{[Exhibit AN]}] \textbf{Ickes Grievance Draft with Metadata Report (July 3, 2021)} \\
+    Twenty-four page draft grievance. Metadata report generated using ExifTool lists: Author ``Harold Ickes''; 6.8 hours total editing time; 8 revisions; timestamped YouTube hyperlinks to party meeting recordings.
+
+    \item[{[Exhibit AO]}] \textbf{Questions to Consider: June 3, 2021 Meeting} \\
+    Additional coaching document distributed to caucus chairs.
+
+    \item[{[Exhibit AP]}] \textbf{November 22, 2020 Grievance with Metadata Report} \\
+    Ten-page grievance filed in Vickers' name against State Chair Biafore. Metadata report generated using ExifTool lists ``Author: Harold Ickes.'' Filed four months after the MOU was signed while the RBC supervised.
+
+    \item[{[Exhibit AQ]}] \textbf{August 16, 2021 AAC Agenda with Metadata Report} \\
+    Draft agenda for AAC meeting. Metadata report generated using ExifTool lists: Author ``Harold Ickes''; Creator ``Harold Ickes''; Create Date 2021-08-16 16:45:41.
+
+    \item[{[Exhibit AR]}] \textbf{August 17, 2021 Procedural Rules with Metadata Report} \\
+    Procedural rules for AAC meetings. Metadata report generated using ExifTool lists: Author ``Harold Ickes''; Creator ``Harold Ickes''; Create Date 2021-08-17 16:13:32. These rules governed how members could participate.
+
+    \item[{[Exhibit AS]}] \textbf{September 11, 2021 Code of Conduct with Metadata Report} \\
+    Code of Conduct for the AAC. Metadata report generated using ExifTool lists: Author ``Harold Ickes''; Creator ``Harold Ickes''; Create Date 2021-09-11 19:46:26. This document was used against Grievant Sturm and other minority caucus leaders.
+
+    \item[{[Exhibit AT]}] \textbf{September 15, 2021 AAC Agenda with Metadata Report} \\
+    Updated draft agenda for AAC meeting. Metadata report generated using ExifTool lists: Author ``Harold Ickes''; Create Date 2021-09-15 21:24:23.
+
+    \item[{[Exhibit AU]}] \textbf{July 3, 2021 Final Grievance with Metadata Report} \\
+    Twenty-six page grievance filed in the names of nine individuals. Metadata report generated using ExifTool lists: Author ``Harold Ickes''; Create Date 2021-07-03 22:46:25. Nine people signed a document listing an RBC member in the ``Author'' field.
+
+    \item[{[Exhibit AV]}] \textbf{Alabama Independent Hearing Officer Appointment (October 4, 2023)} \\
+    News report documenting that the DNC appointed Kim Keenan as Independent Hearing Officer to address Alabama Democratic Party governance violations. Keenan found procedural failures including lack of notice, lack of due process, and lack of transparency.
+
+    \item[{[Exhibit AW]}] \textbf{RBC Alarm Over Alabama Violations (June 17, 2023)} \\
+    News report documenting that DNC Rules and Bylaws Committee Co-Chair Minyon Moore stated the committee was ``alarmed by the bylaws and the operational allegations which seem to prevent the full participation of members.''
+
+    \item[{[Exhibit AX]}] \textbf{AAC Email Chain---Agenda Setting and Code of Conduct (August 29--September 1, 2021)} \\
+    Email chain in which AAC Co-Chair Mary Thorp gives members less than 48 hours to submit Code of Conduct suggestions and announces subcommittee membership by appointment. Kim Felix responds calling this ``agenda setting'' and ``filibustering.''
+
+    \item[{[Exhibit AY]}] \textbf{Bylaws Subcommittee Report and Claytor Inquiry (September 9--10, 2021)} \\
+    Email chain in which Bylaws Subcommittee Co-Chair Cody Thompson reports on the August 31 meeting. Contains Grievant Claytor's third request for the names of non-members who attended the subcommittee meeting.
+
+    \item[{[Exhibit AZ]}] \textbf{Vickers Ghostwriting Email (August 17, 2021)} \\
+    Email from Selina Vickers to ``Kristin L'' containing a pre-written script about ``aggressive emails'' with the instruction ``DO NOT FORWARD THIS EMAIL,'' followed by instructions to send the message ``directly'' to Sturm to simulate an organic complaint.
+
+    \item[{[Exhibit BA]}] \textbf{Assadzandi Social Media Coordination (August 21, 2021)} \\
+    Social media post from Shane Assadzandi stating, ``Day 2 post coming tomorrow. I have a calendar of posts ready to go,'' confirming a pre-planned schedule of attacks rather than a reaction to immediate events.
+
+    \item[{[Exhibit BB]}] \textbf{Clifford Coordination Email (August 22, 2021)} \\
+    Email from Emily Clifford coordinating with Assadzandi regarding social media messaging about Sturm.
+
+    \item[{[Exhibit BC]}] \textbf{Disability Resolution and Correspondence (September 2021)} \\
+    September 17, 2021 email exchange and the subsequent September 27, 2021 ``Resolution Regarding Discrimination of a Person with a Disability'' adopted by the AAC censuring Sturm.
+
+    \item[{[Exhibit BD]}] \textbf{AAC Letter to State Chair (December 5, 2021)} \\
+    Letter from AAC Co-Chair to State Chair Mike Pushkin forwarding the September 27, 2021 censure and recommending Sturm's removal from party positions.
+
+    \item[{[Exhibit BE]}] \textbf{WVDP Motion to Dismiss (July 24, 2023)} \\
+    Motion filed by the State Chair citing the manufactured September 2021 censure [Exhibit BC] as evidence of a ``well documented history of making false accusations,'' demonstrating the party's reliance on the manufactured record to justify current exclusionary actions.
+
+    \item[{[Exhibit BF]}] \textbf{Betty Rivard Email (August 2021)} \\
+    Email from Senior Caucus member Betty Rivard to Sturm stating: ``I received a copy of your resolution and realized that it was coming from a very different place than what I had thought based on the discussion.''
+
+\end{description}
